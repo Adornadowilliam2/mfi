@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrolling Sponsorship</title>
+    <style>
+      /* Container for the scrolling effect */
+      .marquee-container {
+        width: 100%;
+        overflow: hidden; /* Hide the content outside the container */
+        position: relative;
+      }
+
+      /* The "marquee" that will scroll */
+      .marquee {
+        display: flex;
+        animation: marquee-animation 10s linear infinite;
+      }
+
+      /* Individual images styling */
+      .marquee img {
+        height: 100px; /* Set a fixed height for images */
+        margin-right: 30px; /* Space between images */
+      }
+
+      /* Keyframes to move the images */
+      @keyframes marquee-animation {
+        0% {
+          transform: translateX(100%); /* Start off-screen to the right */
+        }
+        10% {
+          transform: translateX(0); /* Move to the initial position */
+        }
+        100% {
+          transform: translateX(-100%); /* Move off-screen to the left */
+        }
+      }
+
+      /* Style for the first static image */
+      .static-image {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marquee-container">
+      <!-- Static first image -->
+      <img src="sponsorship.jpg" alt="Sponsorship" class="static-image" />
+
+      <!-- Marquee for scrolling images -->
+      <div class="marquee">
+        <img src="sponsorship.jpg" alt="Sponsorship" />
+        <img src="spon.png" alt="Sponsor" />
+        <img src="ship.png" alt="Ship" />
+        <!-- Repeat images for continuous scrolling -->
+        <img src="sponsorship.jpg" alt="Sponsorship" />
+        <img src="spon.png" alt="Sponsor" />
+        <img src="ship.png" alt="Ship" />
+      </div>
+    </div>
+  </body>
+</html>

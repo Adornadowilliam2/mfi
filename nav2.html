@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MFI Polytechnic Inc</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #d4ebf8; /* Navbar background color */
+        padding: 10px 20px;
+        color: #1f509a; /* Main text color */
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 50px;
+        height: auto;
+        margin-right: 10px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .logo span {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+      }
+
+      .nav-links li {
+        position: relative;
+        border: 1px solid #1f509a; /* Add border to each nav link */
+        border-radius: 4px;
+      }
+
+      .nav-links a {
+        color: #1f509a; /* Main link color */
+        text-decoration: none;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center; /* Align text and icon */
+        border-radius: 4px;
+        transition: background-color 0.3s; /* Smooth transition */
+      }
+
+      .nav-links a:hover {
+        background-color: #0a3981; /* Hover effect */
+        color: #d4ebf8; /* Hover text color */
+      }
+
+      .nav-links a img {
+        margin-left: 8px; /* Space between text and icon */
+        vertical-align: middle; /* Align the icon vertically */
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #0a3981; /* Dropdown background */
+        padding: 10px;
+        list-style: none;
+        min-width: 180px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+
+      .dropdown-menu li a {
+        color: #d4ebf8; /* Dropdown text color */
+        padding: 8px 12px;
+        display: block;
+        border-radius: 4px;
+      }
+
+      .dropdown-menu li a:hover {
+        background-color: #e38e49; /* Hover effect on dropdown items */
+        color: #0a3981; /* Hover text color on dropdown items */
+      }
+
+      .search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid #1f509a; /* Border color */
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .search-bar input {
+        border: none;
+        outline: none;
+        padding: 8px 12px;
+        width: 180px; /* Adjust width as needed */
+        font-size: 14px;
+      }
+
+      .search-bar button {
+        background-color: #1f509a; /* Button color */
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .search-bar button img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .search-bar input::placeholder {
+        color: #1f509a; /* Placeholder text color */
+      }
+
+      .popover {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        border: 1px solid #1f509a;
+        border-radius: 4px;
+        width: 100%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .popover ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .popover li {
+        padding: 8px 12px;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
+        color: #1f509a;
+      }
+
+      .popover li:hover {
+        background-color: #f0f0f0;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .nav-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links li {
+          margin-bottom: 10px;
+        }
+
+        .search-bar {
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .search-bar input {
+          width: calc(100% - 40px); /* Full width with padding adjustment */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="https://www.mfi.org.ph/wp-content/uploads/2020/04/mfi-logo.png"
+          alt="MFI Polytechnic Inc Logo"
+        />
+        <span>MFI Polytechnic Inc</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li class="dropdown">
+          <a href="#programs"
+            >Programs
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png"
+              alt="Dropdown Icon"
+              width="20px"
+          /></a>
+          <ul class="dropdown-menu">
+            <li><a href="#dual-training">Dual Training System</a></li>
+            <li><a href="#scholarship">Scholarship</a></li>
+            <li><a href="#short-course">Short Course</a></li>
+            <li><a href="#custom-training">Customized Training</a></li>
+            <li><a href="#skills-assessment">Skills Assessment</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#about-us"
+            >About Us
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png"
+              alt="Dropdown Icon"
+              width="20px"
+          /></a>
+          <ul class="dropdown-menu">
+            <li><a href="#history">History</a></li>
+            <li><a href="#mission-vision">Mission and Vision</a></li>
+            <li><a href="#core-values">Core Values</a></li>
+            <li class="dropdown">
+              <a href="#campus">Campus</a>
+              <ul class="dropdown-menu-campus">
+                <li><a href="#pasig">Pasig</a></li>
+                <li><a href="#pasay">Pasay</a></li>
+                <li><a href="#jalajala">Jalajala</a></li>
+              </ul>
+            </li>
+            <li><a href="#bot-management">Bots and Management</a></li>
+            <li><a href="#logo">Logo</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact-us">Contact Us</a></li>
+        <li><a href="#job-opportunities">Job Opportunities</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <button>
+          <img src="search.png" alt="Search Icon" />
+        </button>
+        <div class="popover" id="popover">
+          <ul id="popover-list"></ul>
+        </div>
+      </div>
+    </nav>
+    <script>
+      // Array of valid search terms without the hash
+      const search = [
+        "home",
+        "programs",
+        "about-us",
+        "contact-us",
+        "job-opportunities",
+        "dual-training",
+        "scholarship",
+        "short-course",
+        "custom-training",
+        "skills-assessment",
+        "history",
+        "mission-vision",
+        "core-values",
+        "pasig",
+        "pasay",
+        "jalajala",
+        "bot-management",
+        "logo",
+        "campus",
+      ];
+
+      const searchInput = document.querySelector(".search-bar input");
+      const popover = document.querySelector(".popover");
+      const popoverList = document.querySelector("#popover-list");
+
+      searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        popoverList.innerHTML = ""; // Clear previous suggestions
+        if (searchTerm.length > 0) {
+          const filteredResults = search.filter((term) =>
+            term.includes(searchTerm)
+          );
+          if (filteredResults.length > 0) {
+            popover.style.display = "block";
+            filteredResults.forEach((term) => {
+              const listItem = document.createElement("li");
+              listItem.textContent = term;
+              listItem.onclick = () => {
+                window.location.href = "#" + term;
+                popover.style.display = "none"; // Hide the popover on click
+                searchInput.value = ""; // Clear input after selection
+              };
+              popoverList.appendChild(listItem);
+            });
+          } else {
+            popover.style.display = "none";
+          }
+        } else {
+          popover.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer Design</title>
+    <style>
+      footer {
+        background-color: #333; /* Dark background color */
+        color: #ffffff; /* Light text color */
+        padding: 20px 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        gap: 20px; /* Adds space between sections */
+        padding: 0 20px;
+      }
+
+      .campus-info,
+      .fb-page-section {
+        flex: 1; /* Allows each section to grow equally */
+        min-width: 250px; /* Ensures sections don't get too narrow */
+        background-color: #444; /* Slightly lighter dark background */
+        padding: 15px;
+        border-radius: 5px; /* Rounded corners for a softer look */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+      }
+
+      .campus-info h3,
+      .fb-page-section h3 {
+        margin-top: 0;
+        color: #e38e49; /* Highlight color for headings */
+      }
+
+      .campus-info p,
+      .campus-info ul,
+      .fb-page-section p {
+        margin: 5px 0;
+        color: #ddd; /* Light text for readability */
+      }
+
+      .fb-page {
+        width: 100%; /* Full width for responsive display */
+      }
+
+      .whatsapp-link {
+        color: #25d366;
+        font-size: 16px;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .whatsapp-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column; /* Stack sections vertically on smaller screens */
+        }
+
+        .campus-info,
+        .fb-page-section {
+          min-width: 100%; /* Full width for smaller screens */
+          margin-bottom: 20px; /* Add space between stacked sections */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <div class="container">
+        <!-- MFI Pasig Campus -->
+        <div class="campus-info">
+          <h3>MFI Pasig</h3>
+          <p>
+            <strong>Address:</strong> MFI Building, Ortigas Avenue, Pasig City
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:pasig@mfi.edu.ph" style="color: #ddd"
+              >pasig@mfi.edu.ph</a
+            >
+          </p>
+          <p><strong>Contact:</strong></p>
+          <ul>
+            <li>0999-855-9880 (Smart)</li>
+            <li>0945-398-7687 (Globe)</li>
+            <li>(02) 8632-0758 to 62</li>
+          </ul>
+          <!-- WhatsApp Link -->
+          <a
+            href="https://wa.me/639998559880"
+            class="whatsapp-link"
+            target="_blank"
+          >
+            Contact us on WhatsApp
+          </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.1654820891376!2d121.0705871!3d14.5896446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8050676cba3%3A0xbb119aca1cc16520!2sMFI!5e0!3m2!1sen!2sph!4v1732693013083!5m2!1sen!2sph"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- MFI Pasay Campus -->
+        <div class="campus-info">
+          <h3>MFI Pasay</h3>
+          <p>
+            <strong>Address:</strong> Isabel Building, 2240 Taft Avenue, Brgy.
+            058, Pasay City 1300
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:pasay@mfi.edu.ph" style="color: #ddd"
+              >pasay@mfi.edu.ph</a
+            >
+          </p>
+
+          <p><strong>Contact:</strong></p>
+          <ul>
+            <li>0929-302-2799</li>
+            <li>8-846-5142 to 43</li>
+          </ul>
+          <br />
+          <!-- WhatsApp Link -->
+          <a
+            href="https://wa.me/639293022799"
+            class="whatsapp-link"
+            target="_blank"
+          >
+            Contact us on WhatsApp
+          </a>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15447.404315855238!2d120.97967947372612!3d14.550507377322328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca26e2e0a67d%3A0x76edd245dc56df45!2sMFI%20Polytechnic%20Institute-Pasay%20Campus!5e0!3m2!1sfil!2sph!4v1732709673494!5m2!1sfil!2sph"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- MFI Jalajala Campus -->
+        <div class="campus-info">
+          <h3>MFI Jalajala</h3>
+          <p>
+            <strong>Address:</strong> MFI Building, Jica Highway, Brgy. Punta,
+            Jalajala, Rizal
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:jalajala@mfi.edu.ph" style="color: #ddd"
+              >jalajala@mfi.edu.ph</a
+            >
+          </p>
+          <p><strong>Contact:</strong></p>
+          <ul>
+            <li>0916-394-8314</li>
+            <li>0927-974-8442</li>
+            <li>(02) 8710-2901</li>
+          </ul>
+          <!-- WhatsApp Link -->
+          <a
+            href="https://wa.me/639163948314"
+            class="whatsapp-link"
+            target="_blank"
+          >
+            Contact us on WhatsApp
+          </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5792.750965139942!2d121.30219793517806!3d14.299960331924591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397e12b6056835b%3A0x554e3ed404445633!2sMFI%20Jalajala%20Campus!5e0!3m2!1sfil!2sph!4v1732709906796!5m2!1sfil!2sph"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Facebook Page -->
+        <div class="fb-page-section">
+          <h3>Follow Us on Facebook</h3>
+          <div id="fb-root"></div>
+          <script
+            async
+            defer
+            crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"
+          ></script>
+          <div
+            class="fb-page"
+            data-href="https://www.facebook.com/@MFIPolytechnic"
+            data-tabs="timeline"
+            data-width="500"
+            data-height="400"
+            data-small-header="true"
+            data-adapt-container-width="true"
+            data-hide-cover="false"
+            data-show-facepile="true"
+          >
+            <blockquote
+              cite="https://www.facebook.com/@MFIPolytechnic"
+              class="fb-xfbml-parse-ignore"
+            >
+              <a href="https://www.facebook.com/@MFIPolytechnic"
+                >MFI Polytechnic Institute Inc.</a
+              >
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

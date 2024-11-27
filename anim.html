@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden; /* Prevent scrolling while the GIF is visible */
+      }
+
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Optional: add a semi-transparent background */
+        z-index: 1000; /* Make sure the GIF overlays everything */
+        transition: opacity 1s ease-out;
+      }
+
+      .loading img {
+        width: auto;
+        max-width: 100%;
+        max-height: 100%; /* Scale the image to fit within the viewport */
+      }
+
+      .mfi-content {
+        opacity: 0; /* Initially hidden */
+        transition: opacity 1s ease-in-out; /* Smooth transition for appearance */
+        z-index: 1; /* Ensure content is layered above the background */
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading">
+      <img src="mfi.gif" alt="Loading" />
+    </div>
+    <div class="mfi-content">
+      <h1>Hello world</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+        commodi possimus in minus nostrum, ab numquam nam. Eaque, minus
+        exercitationem magnam, odio et nesciunt quas laborum officia officiis
+        culpa esse.
+      </p>
+      <button>Learn more</button>
+    </div>
+  </body>
+  <script>
+    const loading = document.querySelector(".loading");
+    const content = document.querySelector(".mfi-content");
+
+    /**
+     * Make the gif fade out after 3 seconds and show the content
+     */
+    setTimeout(() => {
+      loading.style.opacity = "0";
+      setTimeout(() => {
+        loading.style.display = "none";
+        content.style.opacity = "1"; // Show the content after the fade-out
+      }, 1000); // Match this duration with the CSS transition time for opacity
+    }, 8000); // This will make the fade-out start after 3 seconds
+  </script>
+</html>

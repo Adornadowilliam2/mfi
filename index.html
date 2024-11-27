@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MFI Polytechnic Inc</title>
+    <link
+      rel="shortcut icon"
+      href="https://www.mfi.org.ph/wp-content/uploads/2020/04/mfi-logo.png"
+      type="image/x-icon"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #d4ebf8; /* Navbar background color */
+        padding: 10px 20px;
+        color: #1f509a; /* Main text color */
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 50px;
+        height: auto;
+        margin-right: 10px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .logo span {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+        z-index: 999;
+      }
+
+      .nav-links li {
+        position: relative;
+        border: 1px solid #1f509a; /* Add border to each nav link */
+        border-radius: 4px;
+      }
+
+      .nav-links a {
+        color: #1f509a; /* Main link color */
+        text-decoration: none;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center; /* Align text and icon */
+        border-radius: 4px;
+        transition: background-color 0.3s; /* Smooth transition */
+      }
+
+      .nav-links a:hover {
+        background-color: #0a3981; /* Hover effect */
+        color: #d4ebf8; /* Hover text color */
+      }
+
+      .nav-links a img {
+        margin-left: 8px; /* Space between text and icon */
+        vertical-align: middle; /* Align the icon vertically */
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #0a3981; /* Dropdown background */
+        padding: 10px;
+        list-style: none;
+        min-width: 180px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+
+      .dropdown-menu li a {
+        color: #d4ebf8; /* Dropdown text color */
+        padding: 8px 12px;
+        display: block;
+        border-radius: 4px;
+      }
+
+      .dropdown-menu li a:hover {
+        background-color: #e38e49; /* Hover effect on dropdown items */
+        color: #0a3981; /* Hover text color on dropdown items */
+      }
+
+      .search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid #1f509a; /* Border color */
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .search-bar input {
+        border: none;
+        outline: none;
+        padding: 8px 12px;
+        width: 180px; /* Adjust width as needed */
+        font-size: 14px;
+      }
+
+      .search-bar button {
+        background-color: #1f509a; /* Button color */
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .search-bar button img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .search-bar input::placeholder {
+        color: #1f509a; /* Placeholder text color */
+      }
+
+      .popover {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        border: 1px solid #1f509a;
+        border-radius: 4px;
+        width: 100%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .popover ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .popover li {
+        padding: 8px 12px;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
+        color: #1f509a;
+      }
+
+      .popover li:hover {
+        background-color: #f0f0f0;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .nav-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links li {
+          margin-bottom: 10px;
+        }
+
+        .search-bar {
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .search-bar input {
+          width: calc(100% - 40px); /* Full width with padding adjustment */
+        }
+      }
+
+      footer {
+        background-color: #333; /* Dark background color */
+        color: #ffffff; /* Light text color */
+        padding: 20px 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        gap: 20px; /* Adds space between sections */
+        padding: 0 20px;
+      }
+
+      .campus-info,
+      .fb-page-section {
+        flex: 1; /* Allows each section to grow equally */
+        min-width: 250px; /* Ensures sections don't get too narrow */
+        background-color: #444; /* Slightly lighter dark background */
+        padding: 15px;
+        border-radius: 5px; /* Rounded corners for a softer look */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+      }
+
+      .campus-info h3,
+      .fb-page-section h3 {
+        margin-top: 0;
+        color: #e38e49; /* Highlight color for headings */
+      }
+
+      .campus-info p,
+      .campus-info ul,
+      .fb-page-section p {
+        margin: 5px 0;
+        color: #ddd; /* Light text for readability */
+      }
+
+      .fb-page {
+        width: 100%; /* Full width for responsive display */
+      }
+
+      .whatsapp-link {
+        color: #25d366;
+        font-size: 16px;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .whatsapp-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column; /* Stack sections vertically on smaller screens */
+        }
+
+        .campus-info,
+        .fb-page-section {
+          min-width: 100%; /* Full width for smaller screens */
+          margin-bottom: 20px; /* Add space between stacked sections */
+        }
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        width: 80px; /* Default for larger screens */
+        background-color: #1f509a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-50%);
+        padding: 10px 0;
+        z-index: 9999;
+      }
+
+      .icon-item {
+        position: relative;
+        text-align: center;
+        margin-bottom: 15px; /* Space between icons */
+      }
+
+      .icon {
+        width: 40px; /* Default icon size */
+        height: 40px; /* Default icon size */
+        border: 2px solid #ffffff; /* White border for better contrast */
+        border-radius: 8px; /* Rounded corners for a smoother look */
+        padding: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: border-color 0.3s, transform 0.3s; /* Smooth transition */
+      }
+
+      .icon:hover {
+        border-color: #e38e49; /* Border color change on hover */
+        transform: scale(1.1); /* Slight scaling effect on hover */
+      }
+
+      .tooltip {
+        position: absolute;
+        top: -35px; /* Adjusted to fit above the icon */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffffff; /* Lighter color for dark icons */
+        color: #0a3981;
+        padding: 5px 10px;
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 12px; /* Improved readability */
+        white-space: nowrap;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        border: 1px solid black;
+      }
+
+      .icon-item:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .icon-item:hover {
+        background-color: #e38e49;
+        border-radius: 50%;
+        padding: 8px; /* Adjusted padding */
+      }
+
+      /* Media query for smaller screens */
+      @media (max-width: 600px) {
+        .sidebar {
+          width: 60px; /* Reduce sidebar width */
+        }
+
+        .icon {
+          width: 30px; /* Smaller icon size */
+          height: 30px; /* Smaller icon size */
+        }
+
+        .tooltip {
+          font-size: 10px; /* Smaller tooltip text */
+          top: -25px; /* Adjust tooltip position */
+        }
+      }
+
+      @media (max-width: 400px) {
+        .sidebar {
+          width: 50px; /* Even smaller for very narrow screens */
+        }
+
+        .icon {
+          width: 25px; /* Smaller icon size */
+          height: 25px; /* Smaller icon size */
+        }
+
+        .tooltip {
+          font-size: 8px; /* Even smaller tooltip text */
+          top: -20px; /* Adjust tooltip position */
+        }
+      }
+
+      /* General resets */
+      body,
+      h1,
+      h2,
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      .home-container {
+        text-align: center;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        max-width: 90%;
+        margin: 20px;
+      }
+
+      .child-home-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .image-container {
+        margin: 20px 0;
+      }
+
+      .image-container img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      main {
+        margin: 20px 0;
+      }
+
+      .cta-section h2 {
+        color: #2c3e50;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .cta-section p {
+        color: #7f8c8d;
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+
+      .cta-button {
+        background-color: #3498db;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 10px 0 0 0;
+      }
+
+      .cta-button:hover {
+        background-color: #2980b9;
+      }
+
+      footer {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #7f8c8d;
+      }
+      main {
+        text-align: left;
+        padding: 10px;
+      }
+
+      /* Responsive design */
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        .cta-section h2 {
+          font-size: 1.5rem;
+        }
+
+        .cta-section p {
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Container for the marquee */
+      .marquee {
+        width: 100%; /* Full width */
+        overflow: hidden; /* Hide content that's scrolled out */
+        position: relative;
+        background-color: #f0f0f0; /* Optional, change background color */
+      }
+
+      /* Content that moves inside the marquee */
+      .marquee-content {
+        display: flex;
+        mix-blend-mode: multiply;
+        transition: transform 0.2s ease-out; /* Smooth transition for images */
+      }
+
+      /* Styling for the images */
+      .marquee-content img {
+        height: 50px; /* Adjust the height of the images */
+        margin-right: 20px; /* Space between the images */
+      }
+
+      .programs {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .programs h2 {
+        color: #1f509a; /* Deep Blue */
+        margin-bottom: 30px;
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+
+      .card-program {
+        position: relative;
+        display: inline-block;
+        width: 250px;
+        margin: 15px;
+        padding: 15px;
+        border: 2px solid #1f509a; /* Deep Blue Border */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* White Background for Cards */
+        transition: transform 0.3s, box-shadow 0.3s;
+        overflow: hidden; /* Ensures content doesn't overflow */
+      }
+
+      .card-program img {
+        width: 100%;
+        max-width: 100px; /* Adjust as needed */
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      .card-program p {
+        font-size: 1.1rem;
+        color: #0a3981; /* Dark Blue */
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .card-program:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-program::after {
+        content: attr(
+          data-title
+        ); /* Fetches the value from the data-title attribute */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 6px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .card-program:hover::after {
+        opacity: 1; /* Shows the title on hover */
+      }
+
+      .card-program:nth-child(even) {
+        border-color: #e38e49; /* Orange Border */
+      }
+
+      .card-program:nth-child(odd) {
+        border-color: #1f509a; /* Deep Blue Border */
+      }
+
+      .card-program:nth-child(odd):hover {
+        border-color: #0a3981; /* Dark Blue Border on hover */
+      }
+
+      .card-program:nth-child(even):hover {
+        border-color: #e38e49; /* Orange Border on hover */
+        color: #e38e49; /* Text color on hover */
+      }
+
+      .card-program:nth-child(even) p {
+        color: #e38e49; /* Orange Text */
+      }
+
+      .anniversary-title {
+        color: #1f509a; /* Deep Blue for the main text */
+        font-size: 2.5rem; /* Larger font size */
+        font-weight: bold; /* Make it bold for emphasis */
+        text-align: center; /* Center the text */
+        background: linear-gradient(
+          90deg,
+          #0a3981,
+          #e38e49
+        ); /* Gradient background */
+        -webkit-background-clip: text; /* Clip the background to text */
+        color: transparent; /* Make the text color transparent so the gradient shows */
+        padding: 10px; /* Add some padding */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+        margin-bottom: 20px; /* Increased margin for spacing */
+      }
+
+      .milestone-text {
+        color: #0a3981; /* Dark Blue */
+        font-size: 1.1rem; /* Slightly larger font size for readability */
+        line-height: 1.1; /* Add space between lines */
+        font-family: "Arial", sans-serif; /* Clean and modern font */
+        text-align: justify;
+        width: 90%;
+      }
+
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Optional: add a semi-transparent background */
+        z-index: 1000; /* Make sure the GIF overlays everything */
+        transition: opacity 1s ease-out;
+      }
+
+      .loading img {
+        width: auto;
+        max-width: 100%;
+        max-height: 100%; /* Scale the image to fit within the viewport */
+      }
+
+      .mfi-content {
+        opacity: 0; /* Initially hidden */
+        transition: opacity 1s ease-in-out; /* Smooth transition for appearance */
+        z-index: 1; /* Ensure content is layered above the background */
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading">
+      <img src="mfi.gif" alt="Loading" />
+    </div>
+    <div class="mfi-content">
+      <!-- navbar -->
+      <nav class="navbar">
+        <div class="logo">
+          <img
+            src="https://www.mfi.org.ph/wp-content/uploads/2020/04/mfi-logo.png"
+            alt="MFI Polytechnic Inc Logo"
+          />
+          <span>MFI Polytechnic Inc</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li class="dropdown">
+            <a href="#programs"
+              >Programs
+              <img
+                src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png"
+                alt="Dropdown Icon"
+                width="20px"
+            /></a>
+            <ul class="dropdown-menu">
+              <li><a href="#dual-training">Dual Training System</a></li>
+              <li><a href="#scholarship">Scholarship</a></li>
+              <li><a href="#short-course">Short Course</a></li>
+              <li><a href="#custom-training">Customized Training</a></li>
+              <li><a href="#skills-assessment">Skills Assessment</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#about-us"
+              >About Us
+              <img
+                src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png"
+                alt="Dropdown Icon"
+                width="20px"
+            /></a>
+            <ul class="dropdown-menu">
+              <li><a href="#history">History</a></li>
+              <li><a href="#mission-vision">Mission and Vision</a></li>
+              <li><a href="#core-values">Core Values</a></li>
+              <li class="dropdown">
+                <a href="#campus">Campus</a>
+                <ul class="dropdown-menu-campus">
+                  <li><a href="#pasig">Pasig</a></li>
+                  <li><a href="#pasay">Pasay</a></li>
+                  <li><a href="#jalajala">Jalajala</a></li>
+                </ul>
+              </li>
+              <li><a href="#bot-management">Bots and Management</a></li>
+              <li><a href="#logo">Logo</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact-us">Contact Us</a></li>
+          <li><a href="#job-opportunities">Job Opportunities</a></li>
+        </ul>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button>
+            <img src="search.png" alt="Search Icon" />
+          </button>
+          <div class="popover" id="popover">
+            <ul id="popover-list"></ul>
+          </div>
+        </div>
+      </nav>
+      <!-- sidebar -->
+      <div class="sidebar">
+        <div class="icon-item">
+          <img src="home.png" alt="Home" class="icon" />
+          <span class="tooltip">Home</span>
+        </div>
+        <div class="icon-item">
+          <img src="lightbulb.png" alt="Discovery" class="icon" />
+          <span class="tooltip">Discovery</span>
+        </div>
+        <div class="icon-item">
+          <img src="video.png" alt="Video" class="icon" />
+          <span class="tooltip">Video</span>
+        </div>
+        <div class="icon-item">
+          <img src="newspaper.png" alt="News" class="icon" />
+          <span class="tooltip"
+            >News and <br />
+            Announcement</span
+          >
+        </div>
+        <div class="icon-item">
+          <img src="info.png" alt="Footer" class="icon" />
+          <span class="tooltip">Footer</span>
+        </div>
+      </div>
+      <!-- Home container -->
+      <div
+        class="home-container"
+        style="
+          margin: 0 auto;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          margin-top: 10px;
+          position: relative;
+        "
+      >
+        <div class="child-home-container">
+          <div class="image-container">
+            <img src="51 Year.jpg" alt="Placeholder image" />
+          </div>
+          <main>
+            <section
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                height: 100%;
+              "
+            >
+              <span>
+                <h2 class="anniversary-title">
+                  51 Year Anniversary of MFI Polytechnic
+                </h2>
+
+                <p class="milestone-text">
+                  We extend our heartfelt gratitude to everyone who has been a
+                  part of our journey. Reaching this 51-year milestone is a
+                  testament to the dedication, hard work, and unwavering support
+                  of our students, faculty, alumni, and community. At MFI
+                  Polytechnic, we continue to strive for excellence and
+                  innovation, empowering future generations to lead in the
+                  ever-evolving world of technology and education.
+                </p>
+
+                <button class="cta-button">Learn More</button>
+              </span>
+            </section>
+          </main>
+        </div>
+        <div class="marquee">
+          <div class="marquee-content">
+            <!-- Images will be dynamically generated here -->
+          </div>
+        </div>
+      </div>
+      <section class="programs">
+        <h2>PROGRAMS OFFERED</h2>
+        <div class="card-program" data-title="Dual Training System Details">
+          <img src="DTS.webp" alt="Dual Training System" />
+          <p>Dual Training System</p>
+        </div>
+        <div class="card-program" data-title="Scholarship Details">
+          <img src="Scholarship.webp" alt="Scholarship" />
+          <p>Scholarship</p>
+        </div>
+        <div class="card-program" data-title="Customized Training Details">
+          <img src="customized-training.webp" alt="Customized Training" />
+          <p>Customized Training</p>
+        </div>
+        <div class="card-program" data-title="Short Course Details">
+          <img src="SHORT-COURSE.webp" alt="Short Course" />
+          <p>Short Course</p>
+        </div>
+        <div class="card-program" data-title="Skills Assessment Details">
+          <img src="skills_assessment.webp" alt="Skills Assessment" />
+          <p>Skills Assessment</p>
+        </div>
+        <div class="card-program" data-title="Industry Partners Details">
+          <img src="Industry-Partners.webp" alt="Industry Partners" />
+          <p>Industry Partners</p>
+        </div>
+        <div class="card-program" data-title="International Student Details">
+          <img src="Internation.webp" alt="International Students" />
+          <p>International Student</p>
+        </div>
+      </section>
+      <hr />
+      <!-- image content -->
+      <section>
+        <img src="IMG.jpeg" alt="" />
+      </section>
+      <!-- news and announcement -->
+      <section>
+        <img src="new.png" alt="" style="width: 100%" />
+      </section>
+      <!-- footer -->
+      <footer>
+        <div class="container">
+          <!-- MFI Pasig Campus -->
+          <div class="campus-info">
+            <h3>MFI Pasig</h3>
+            <p>
+              <strong>Address:</strong> MFI Building, Ortigas Avenue, Pasig City
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:pasig@mfi.edu.ph" style="color: #ddd"
+                >pasig@mfi.edu.ph</a
+              >
+            </p>
+            <p><strong>Contact:</strong></p>
+            <ul>
+              <li>0999-855-9880 (Smart)</li>
+              <li>0945-398-7687 (Globe)</li>
+              <li>(02) 8632-0758 to 62</li>
+            </ul>
+            <!-- WhatsApp Link -->
+            <a
+              href="https://wa.me/639998559880"
+              class="whatsapp-link"
+              target="_blank"
+            >
+              Contact us on WhatsApp
+            </a>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.1654820891376!2d121.0705871!3d14.5896446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8050676cba3%3A0xbb119aca1cc16520!2sMFI!5e0!3m2!1sen!2sph!4v1732693013083!5m2!1sen!2sph"
+              width="100%"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <!-- MFI Pasay Campus -->
+          <div class="campus-info">
+            <h3>MFI Pasay</h3>
+            <p>
+              <strong>Address:</strong> Isabel Building, 2240 Taft Avenue, Brgy.
+              058, Pasay City 1300
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:pasay@mfi.edu.ph" style="color: #ddd"
+                >pasay@mfi.edu.ph</a
+              >
+            </p>
+
+            <p><strong>Contact:</strong></p>
+            <ul>
+              <li>0929-302-2799</li>
+              <li>8-846-5142 to 43</li>
+            </ul>
+            <br />
+            <!-- WhatsApp Link -->
+            <a
+              href="https://wa.me/639293022799"
+              class="whatsapp-link"
+              target="_blank"
+            >
+              Contact us on WhatsApp
+            </a>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15447.404315855238!2d120.97967947372612!3d14.550507377322328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca26e2e0a67d%3A0x76edd245dc56df45!2sMFI%20Polytechnic%20Institute-Pasay%20Campus!5e0!3m2!1sfil!2sph!4v1732709673494!5m2!1sfil!2sph"
+              width="100%"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <!-- MFI Jalajala Campus -->
+          <div class="campus-info">
+            <h3>MFI Jalajala</h3>
+            <p>
+              <strong>Address:</strong> MFI Building, Jica Highway, Brgy. Punta,
+              Jalajala, Rizal
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:jalajala@mfi.edu.ph" style="color: #ddd"
+                >jalajala@mfi.edu.ph</a
+              >
+            </p>
+            <p><strong>Contact:</strong></p>
+            <ul>
+              <li>0916-394-8314</li>
+              <li>0927-974-8442</li>
+              <li>(02) 8710-2901</li>
+            </ul>
+            <!-- WhatsApp Link -->
+            <a
+              href="https://wa.me/639163948314"
+              class="whatsapp-link"
+              target="_blank"
+            >
+              Contact us on WhatsApp
+            </a>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5792.750965139942!2d121.30219793517806!3d14.299960331924591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397e12b6056835b%3A0x554e3ed404445633!2sMFI%20Jalajala%20Campus!5e0!3m2!1sfil!2sph!4v1732709906796!5m2!1sfil!2sph"
+              width="100%"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <!-- Facebook Page -->
+          <div class="fb-page-section">
+            <h3>Follow Us on Facebook</h3>
+            <div id="fb-root"></div>
+            <script
+              async
+              defer
+              crossorigin="anonymous"
+              src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"
+            ></script>
+            <div
+              class="fb-page"
+              data-href="https://www.facebook.com/@MFIPolytechnic"
+              data-tabs="timeline"
+              data-width="500"
+              data-height="400"
+              data-small-header="true"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            >
+              <blockquote
+                cite="https://www.facebook.com/@MFIPolytechnic"
+                class="fb-xfbml-parse-ignore"
+              >
+                <a href="https://www.facebook.com/@MFIPolytechnic"
+                  >MFI Polytechnic Institute Inc.</a
+                >
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const loading = document.querySelector(".loading");
+      const content = document.querySelector(".mfi-content");
+
+      /**
+       * Make the gif fade out after 3 seconds and show the content
+       */
+      setTimeout(() => {
+        loading.style.opacity = "0";
+        setTimeout(() => {
+          loading.style.display = "none";
+          content.style.opacity = "1"; // Show the content after the fade-out
+        }, 1000); // Match this duration with the CSS transition time for opacity
+      }, 8000); // This will make the fade-out start after 3 seconds
+      const headers = [
+        "51 Year Anniversary of MFI Polytechnic",
+        "Scholarship for employment",
+        "Enrollment is now ongoing!",
+        "Integrated Technology Training Program (ITTP)",
+        `
+              Hundred of courses available
+      `,
+      ];
+      const imageurls = [
+        "51 Year.jpg",
+        "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/10/SCHOLARSHIP-FOR-ROLLING-SCHED.png?resize=980%2C551&ssl=1",
+        "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/09/resized-ENROLLMENT-IS-NOW-ONGOING.jpg?resize=980%2C551&ssl=1",
+        "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/08/ITTP-website-banner.png?resize=980%2C551&ssl=1",
+        "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/09/resized-TTAP-WEBSITE-BANNER.jpg?resize=980%2C551&ssl=1",
+      ];
+      const paragraphs = [
+        `   We extend our heartfelt gratitude to everyone who has been a
+                            part of our journey. Reaching this 51-year milestone is a
+                            testament to the dedication, hard work, and unwavering support
+                            of our students, faculty, alumni, and community. At MFI
+                            Polytechnic, we continue to strive for excellence and
+                            innovation, empowering future generations to lead in the
+                            ever-evolving world of technology and education.`,
+        `GT Foundation and Analog Devices are proud to offer scholarships at MFI Polytechnic Institute for the following programs:
+
+            Semiconductor Manufacturing Technology
+            Industrial Electrical Technology
+            Network System and Security Administration
+            Don’t miss this opportunity to level up your skills and secure your future!`,
+        `
+      Enrollment is now ongoing!
+      MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025
+
+      Empowering You with Choice and Opportunity:
+
+      Automotive Technology
+      Digital Arts and Design
+      Industrial Automation and Mechatronics Technology
+      Information Technology
+      Integrated Technology Training Program
+      Network Security and System Administration
+      Industrial Electrical Technology
+      ENROLL NOW
+      `,
+        `Our Integrated Technology training program offers a unique blend of theoretical knowledge and hands-on experience to propel you toward a successful career.
+      `,
+        `Hundreds of courses available
+      MFI has gone a long way since 1973, evolving into a fully operational educational institution that provides the general public with world-class technical skills education and training.
+      `,
+      ];
+      const btnCalls = [
+        "Learn More",
+        "Apply Now",
+        "Enroll Now",
+        "Learn More",
+        "See all courses",
+      ];
+
+      // Query elements
+      const grid = document.querySelector(".child-home-container");
+      const img = document.querySelector(".image-container img");
+      const h1 = document.querySelector(".anniversary-title");
+      const p = document.querySelector(".milestone-text");
+      const btn = document.querySelector(".cta-button");
+
+      let count = 0;
+
+      const updateContent = () => {
+        // Set initial state for the grid and elements
+        grid.style.opacity = 0;
+        img.classList.remove("show");
+        p.style.opacity = 0;
+        h1.style.opacity = 0;
+        btn.style.opacity = 0;
+
+        // Set new content
+        img.src = imageurls[count];
+        h1.textContent = headers[count];
+        p.textContent = paragraphs[count];
+        btn.textContent = btnCalls[count];
+
+        // Trigger reflow to restart transition
+        void grid.offsetWidth;
+
+        // Apply animations
+        grid.style.opacity = 1;
+        img.classList.add("show");
+        p.style.opacity = 1;
+        h1.style.opacity = 1;
+        btn.style.opacity = 1;
+
+        count = (count + 1) % headers.length; // Wrap around to 0 when reaching the end
+      };
+
+      setInterval(updateContent, 2000);
+
+      // Initial content setup
+      updateContent();
+      document.addEventListener("DOMContentLoaded", function () {
+        const marqueeContent = document.querySelector(".marquee-content");
+        const imageSources = [
+          "one.png",
+          "two.png",
+          "three.png",
+          "four.png",
+          "five.png",
+        ]; // Array of image sources
+        const totalImages = 100; // Number of images to generate
+
+        // Generate 100 images dynamically
+        for (let i = 0; i < totalImages; i++) {
+          const imageIndex = i % imageSources.length; // Cycle through the image sources
+          const image = document.createElement("img");
+          image.src = imageSources[imageIndex];
+          image.alt = `Image ${imageIndex + 1}`;
+          marqueeContent.appendChild(image);
+        }
+
+        // Function to handle the scrolling effect
+        function startScrolling() {
+          const imageWidth = marqueeContent.children[0].offsetWidth + 20; // Width of each image including margin
+          const totalWidth = imageWidth * marqueeContent.children.length; // Total width of all images
+          let currentPosition = 0;
+
+          // Scroll the content by updating its transform property
+          function scroll() {
+            currentPosition -= 1; // Move left by 1px
+            marqueeContent.style.transform = `translateX(${currentPosition}px)`;
+
+            // If the first image is out of view, reset the position to start again
+            if (currentPosition <= -totalWidth) {
+              currentPosition = 0;
+            }
+
+            requestAnimationFrame(scroll); // Continue the animation
+          }
+
+          // Start scrolling animation
+          scroll();
+        }
+
+        startScrolling(); // Initialize scrolling
+      });
+      // Array of valid search terms without the hash
+      const search = [
+        "home",
+        "programs",
+        "about-us",
+        "contact-us",
+        "job-opportunities",
+        "dual-training",
+        "scholarship",
+        "short-course",
+        "custom-training",
+        "skills-assessment",
+        "history",
+        "mission-vision",
+        "core-values",
+        "pasig",
+        "pasay",
+        "jalajala",
+        "bot-management",
+        "logo",
+        "campus",
+      ];
+
+      const searchInput = document.querySelector(".search-bar input");
+      const popover = document.querySelector(".popover");
+      const popoverList = document.querySelector("#popover-list");
+
+      searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        popoverList.innerHTML = ""; // Clear previous suggestions
+        if (searchTerm.length > 0) {
+          const filteredResults = search.filter((term) =>
+            term.includes(searchTerm)
+          );
+          if (filteredResults.length > 0) {
+            popover.style.display = "block";
+            filteredResults.forEach((term) => {
+              const listItem = document.createElement("li");
+              listItem.textContent = term;
+              listItem.onclick = () => {
+                window.location.href = "#" + term;
+                popover.style.display = "none"; // Hide the popover on click
+                searchInput.value = ""; // Clear input after selection
+              };
+              popoverList.appendChild(listItem);
+            });
+          } else {
+            popover.style.display = "none";
+          }
+        } else {
+          popover.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

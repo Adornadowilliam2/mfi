@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Right-Aligned Sidebar with Hover Titles</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        width: 80px; /* Default for larger screens */
+        background-color: #1f509a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-50%);
+        padding: 10px 0;
+      }
+
+      .icon-item {
+        position: relative;
+        text-align: center;
+        margin-bottom: 15px; /* Space between icons */
+      }
+
+      .icon {
+        width: 40px; /* Default icon size */
+        height: 40px; /* Default icon size */
+        border: 2px solid #ffffff; /* White border for better contrast */
+        border-radius: 8px; /* Rounded corners for a smoother look */
+        padding: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: border-color 0.3s, transform 0.3s; /* Smooth transition */
+      }
+
+      .icon:hover {
+        border-color: #e38e49; /* Border color change on hover */
+        transform: scale(1.1); /* Slight scaling effect on hover */
+      }
+
+      .tooltip {
+        position: absolute;
+        top: -35px; /* Adjusted to fit above the icon */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffffff; /* Lighter color for dark icons */
+        color: #0a3981;
+        padding: 5px 10px;
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 12px; /* Improved readability */
+        white-space: nowrap;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      }
+
+      .icon-item:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .icon-item:hover {
+        background-color: #e38e49;
+        border-radius: 50%;
+        padding: 8px; /* Adjusted padding */
+      }
+
+      /* Media query for smaller screens */
+      @media (max-width: 600px) {
+        .sidebar {
+          width: 60px; /* Reduce sidebar width */
+        }
+
+        .icon {
+          width: 30px; /* Smaller icon size */
+          height: 30px; /* Smaller icon size */
+        }
+
+        .tooltip {
+          font-size: 10px; /* Smaller tooltip text */
+          top: -25px; /* Adjust tooltip position */
+        }
+      }
+
+      @media (max-width: 400px) {
+        .sidebar {
+          width: 50px; /* Even smaller for very narrow screens */
+        }
+
+        .icon {
+          width: 25px; /* Smaller icon size */
+          height: 25px; /* Smaller icon size */
+        }
+
+        .tooltip {
+          font-size: 8px; /* Even smaller tooltip text */
+          top: -20px; /* Adjust tooltip position */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="icon-item">
+        <img src="home.png" alt="Home" class="icon" />
+        <span class="tooltip">Home</span>
+      </div>
+      <div class="icon-item">
+        <img src="lightbulb.png" alt="Discovery" class="icon" />
+        <span class="tooltip">Discovery</span>
+      </div>
+      <div class="icon-item">
+        <img src="video.png" alt="Video" class="icon" />
+        <span class="tooltip">Video</span>
+      </div>
+      <div class="icon-item">
+        <img src="newspaper.png" alt="News" class="icon" />
+        <span class="tooltip">News and Announcement</span>
+      </div>
+      <div class="icon-item">
+        <img src="info.png" alt="Footer" class="icon" />
+        <span class="tooltip">Footer</span>
+      </div>
+    </div>
+  </body>
+</html>

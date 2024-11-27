@@ -1,0 +1,28 @@
+/* Container for the marquee effect */
+.marquee-container {
+  width: 100%;
+  overflow: hidden; /* Hides images that are outside the container */
+  position: relative;
+}
+
+/* Marquee animation */
+.marquee {
+  display: flex; /* Display images in a row */
+  animation: marquee-animation 10s linear infinite; /* Controls speed and looping */
+}
+
+/* Individual images styling */
+.marquee img {
+  height: 100px; /* Set height for the images */
+  margin-right: 30px; /* Space between images */
+}
+
+/* Keyframes for the scrolling effect */
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(100%); /* Start from the right edge */
+  }
+  100% {
+    transform: translateX(-100%); /* End at the left edge */
+  }
+}

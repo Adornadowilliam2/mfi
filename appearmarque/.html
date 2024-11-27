@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Scrolling Marquee</title>
+    <style>
+      /* Container for the marquee */
+      .marquee {
+        width: 100%; /* Full width */
+        overflow: hidden; /* Hide content that's scrolled out */
+        position: relative;
+        background-color: #f0f0f0; /* Optional, change background color */
+      }
+
+      /* Content that moves inside the marquee */
+      .marquee-content {
+        display: flex;
+        mix-blend-mode: multiply;
+        transition: transform 0.2s ease-out; /* Smooth transition for images */
+      }
+
+      /* Styling for the images */
+      .marquee-content img {
+        height: 50px; /* Adjust the height of the images */
+        margin-right: 20px; /* Space between the images */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Marquee container -->
+    <div class="marquee">
+      <div class="marquee-content">
+        <!-- Images will be dynamically generated here -->
+      </div>
+    </div>
+
+    <script>
+      // Wait for the DOM to be fully loaded before running the script
+      document.addEventListener("DOMContentLoaded", function () {
+        const marqueeContent = document.querySelector(".marquee-content");
+        const imageSources = [
+          "one.png",
+          "two.png",
+          "three.png",
+          "four.png",
+          "five.png",
+        ]; // Array of image sources
+        const totalImages = 100; // Number of images to generate
+
+        // Generate 100 images dynamically
+        for (let i = 0; i < totalImages; i++) {
+          const imageIndex = i % imageSources.length; // Cycle through the image sources
+          const image = document.createElement("img");
+          image.src = imageSources[imageIndex];
+          image.alt = `Image ${imageIndex + 1}`;
+          marqueeContent.appendChild(image);
+        }
+
+        // Function to handle the scrolling effect
+        function startScrolling() {
+          const imageWidth = marqueeContent.children[0].offsetWidth + 20; // Width of each image including margin
+          const totalWidth = imageWidth * marqueeContent.children.length; // Total width of all images
+          let currentPosition = 0;
+
+          // Scroll the content by updating its transform property
+          function scroll() {
+            currentPosition -= 1; // Move left by 1px
+            marqueeContent.style.transform = `translateX(${currentPosition}px)`;
+
+            // If the first image is out of view, reset the position to start again
+            if (currentPosition <= -totalWidth) {
+              currentPosition = 0;
+            }
+
+            requestAnimationFrame(scroll); // Continue the animation
+          }
+
+          // Start scrolling animation
+          scroll();
+        }
+
+        startScrolling(); // Initialize scrolling
+      });
+    </script>
+  </body>
+</html>

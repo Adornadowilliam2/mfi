@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stylized Document with Navbar</title>
+    <style>
+      /* Basic Reset */
+      body,
+      h1,
+      p,
+      button {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #d4ebf8; /* Light blue background */
+        padding: 0 20px;
+        overflow: hidden;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: #1f509a; /* Deep blue for navbar */
+        padding: 10px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        margin: 0 10px;
+      }
+
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+
+      /* Grid container */
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+        background-color: #e38e49; /* Warm, inviting color for contrast */
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 1200px;
+        height: 100vh; /* Full viewport height */
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s, transform 0.5s;
+      }
+
+      img.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h1 {
+        font-size: 2rem;
+        color: #1f509a; /* Deep blue for main headers */
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #0a3981; /* Darker blue for the paragraph */
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      button {
+        background-color: #1f509a; /* Match header color */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0a3981; /* Darker blue for hover effect */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main content container -->
+    <div class="grid">
+      <img src="" alt="Image Placeholder" />
+      <span>
+        <h1></h1>
+        <p></p>
+        <button></button>
+      </span>
+    </div>
+
+    <script>
+      const headers = [
+        "Header 1",
+        "Header 2",
+        "Header 3",
+        "Header 4",
+        "Header 5",
+      ];
+      const imageurls = [
+        "https://github.com/Adornadowilliam2/pokemon-api/blob/images/Alakazam.png?raw=true",
+        "https://github.com/Adornadowilliam2/pokemon-api/blob/images/Pikachu.png?raw=true",
+        "https://github.com/Adornadowilliam2/pokemon-api/blob/images/Charizard.png?raw=true",
+        "https://github.com/Adornadowilliam2/pokemon-api/blob/images/Bulbasaur.png?raw=true",
+        "https://github.com/Adornadowilliam2/pokemon-api/blob/images/Blastoise.png?raw=true",
+      ];
+      const paragraphs = [
+        "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quibusdam!",
+        "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quibusdam!",
+        "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quibusdam!",
+        "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quibusdam!",
+        "lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quibusdam!",
+      ];
+      const btnCalls = ["Call 1", "Call 2", "Call 3", "Call 4", "Call 5"];
+
+      // Query elements
+      const grid = document.querySelector(".grid");
+      const img = document.querySelector("img");
+      const h1 = document.querySelector("h1");
+      const p = document.querySelector("p");
+      const btn = document.querySelector("button");
+
+      let count = 0;
+
+      const updateContent = () => {
+        // Set initial state for the grid and elements
+        grid.style.opacity = 0;
+        img.classList.remove("show");
+        p.style.opacity = 0;
+        h1.style.opacity = 0;
+        btn.style.opacity = 0;
+
+        // Set new content
+        img.src = imageurls[count];
+        h1.textContent = headers[count];
+        p.textContent = paragraphs[count];
+        btn.textContent = btnCalls[count];
+
+        // Trigger reflow to restart transition
+        void grid.offsetWidth;
+
+        // Apply animations
+        grid.style.opacity = 1;
+        img.classList.add("show");
+        p.style.opacity = 1;
+        h1.style.opacity = 1;
+        btn.style.opacity = 1;
+
+        count = (count + 1) % headers.length; // Wrap around to 0 when reaching the end
+      };
+
+      setInterval(updateContent, 2000);
+
+      // Initial content setup
+      updateContent();
+    </script>
+  </body>
+</html>
