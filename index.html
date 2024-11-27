@@ -275,6 +275,8 @@
         position: relative;
         text-align: center;
         margin-bottom: 15px; /* Space between icons */
+        cursor: pointer;
+        background-color: #dddddd6b;
       }
 
       .icon {
@@ -616,6 +618,88 @@
         z-index: 1; /* Ensure content is layered above the background */
         position: relative;
       }
+
+      .body-discover {
+        font-family: "Arial", sans-serif;
+        background-color: #e4f0f8; /* Light blue background */
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .discover {
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .card-discover-container .icon {
+        width: 50px; /* Set the size of the icon */
+        height: auto;
+      }
+
+      .card-discover-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .card-discover {
+        background: linear-gradient(135deg, #d4ebf8, #1f509a, #0a3981, #e38e49);
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start; /* Align content to the left */
+        text-align: left; /* Ensure text is left-aligned */
+        height: 400px; /* Set a consistent height for all cards */
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card-discover iframe {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Add space between iframe and content */
+      }
+
+      .card-discover img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px; /* Add space between image and content */
+      }
+
+      .card-discover h2 {
+        color: #ffffff;
+        margin: 10px 0; /* Adjust spacing */
+      }
+
+      .card-discover p {
+        color: #f9f9f9;
+        margin: 0 0 10px; /* Adjust spacing */
+        line-height: 1.6; /* Improve readability */
+      }
+
+      .card-discover a {
+        color: #ffffff;
+        text-decoration: underline;
+        font-weight: bold;
+        transition: color 0.3s;
+        text-decoration: none;
+      }
+
+      .card-discover a:hover {
+        color: #ffdc60; /* Highlight color */
+      }
+
+      .card-discover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
   </head>
   <body>
@@ -689,33 +773,44 @@
       </nav>
       <!-- sidebar -->
       <div class="sidebar">
-        <div class="icon-item">
-          <img src="home.png" alt="Home" class="icon" />
-          <span class="tooltip">Home</span>
+        <div class="icon-item" href="#home-container">
+          <a href="#home-container">
+            <img src="home.png" alt="Home" class="icon" />
+            <span class="tooltip">Home</span>
+          </a>
         </div>
         <div class="icon-item">
-          <img src="lightbulb.png" alt="Discovery" class="icon" />
-          <span class="tooltip">Discovery</span>
+          <a href="#discover">
+            <img src="lightbulb.png" alt="Discovery" class="icon" />
+            <span class="tooltip">Discovery</span>
+          </a>
         </div>
         <div class="icon-item">
-          <img src="video.png" alt="Video" class="icon" />
-          <span class="tooltip">Video</span>
+          <a href="#video">
+            <img src="video.png" alt="Video" class="icon" />
+            <span class="tooltip">Video</span>
+          </a>
         </div>
         <div class="icon-item">
-          <img src="newspaper.png" alt="News" class="icon" />
-          <span class="tooltip"
-            >News and <br />
-            Announcement</span
-          >
+          <a href="#news">
+            <img src="newspaper.png" alt="News" class="icon" />
+            <span class="tooltip"
+              >News and <br />
+              Announcement</span
+            >
+          </a>
         </div>
         <div class="icon-item">
-          <img src="info.png" alt="Footer" class="icon" />
-          <span class="tooltip">Footer</span>
+          <a href="#footer">
+            <img src="info.png" alt="Footer" class="icon" />
+            <span class="tooltip">Footer</span>
+          </a>
         </div>
       </div>
       <!-- Home container -->
       <div
         class="home-container"
+        id="home-container"
         style="
           margin: 0 auto;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -796,15 +891,107 @@
       </section>
       <hr />
       <!-- image content -->
-      <section>
-        <img src="IMG.jpeg" alt="" />
+      <section id="discover">
+        <div class="body-discover">
+          <div class="discover">
+            <span style="display: flex; align-items: center; gap: 10px">
+              <img
+                src="search-blue-icon.png"
+                alt="discover icon"
+                class="icon"
+                style="border: none; object-fit: contain"
+              />
+              <h2>Discover your Potential AT MFI</h2>
+            </span>
+            <div class="card-discover-container">
+              <div class="card-discover">
+                <a href="https://courselist.mfi.org.ph/courses/3201">
+                  <iframe
+                    src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMFIPolytechnic%2Fvideos%2F1060991552438633%2F&show_text=false&width=560&t=0"
+                    width="100%"
+                    height="314"
+                    style="border: none; overflow: hidden"
+                    scrolling="no"
+                    frameborder="0"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  ></iframe>
+                  <h2>🚀 Become a Web Developer in just 120 hours! 🌐💻</h2>
+                  <p>
+                    Enroll now in our new Full-Stack Web Development short
+                    course and kickstart your tech career! Don't miss out on
+                    this opportunity to learn essential skills and build amazing
+                    projects.
+
+                    <a
+                      href="https://l.facebook.com/l.php?u=https%3A%2F%2Fcourselist.mfi.org.ph%2Fcourses%2F3201%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR0r3gubD7hpOexHZvAKmepycIR-SCED1E3LRI-XQKgKAiv6yUpVoWPSeYg_aem_6n48qikxvv_viAZzKVDEMQ&h=AT2Jz8EW5qbEVo9zEpPbAfHUIk0fdwOK73nCj-Po_K4ihJuqy2ed4otRLBbLfVPZWq4OYPHR88ykvOkcyyKlYvs-Pi3Mm-h2LzJFcsYVBPv7sFlr8OtVuBkI7yZQNW-On5H26lUr_PMfvvLk09Ld&__tn__=-UK-R&c[0]=AT1Q-bJbTlU6bxTfTVE0ronQLN8BjHMSRFXbGSrmFsFphJjEpmyTWzM3Le1Ydd-6r5cqSs-eFb03mGnsVZ6ZtrGpn3GcD0RYR5dIjBN2E_45t9RHKB7lndkuus49vF2BWkRzAtDXMnUBBOHCTatIGW8x_n4bb0BdkIJWxlj0O8R7YXcB-bQyHjD-4KBVs3pSgwr6VAi5AmWlGOyGI7WrK0eEskZG74sj1fWxcw"
+                      style="color: lightskyblue; text-decoration: underline"
+                      >Enroll Now</a
+                    >
+                  </p>
+                </a>
+              </div>
+              <div class="card-discover">
+                <a href="https://courselist.mfi.org.ph/courses/55">
+                  <iframe
+                    src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMFIPolytechnic%2Fposts%2Fpfbid033jvtWdChLsZqYW8ZSWd9SZZXQYpbSUc5xwKXt1WUiGZgNdcp8hqp3xcpCDHL4QZUl&show_text=true&width=500"
+                    width="100%"
+                    height="200"
+                    style="border: none; overflow: hidden"
+                    scrolling="no"
+                    frameborder="0"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  ></iframe>
+                  <h2>
+                    Become an Industrial Electrician and master the electrical
+                    world! ⚡
+                  </h2>
+                  <p>
+                    Our comprehensive course covers everything from safety
+                    protocols to advanced troubleshooting techniques. 🛠️ 🏭
+                    <br />
+                    <a
+                      href="https://courselist.mfi.org.ph/courses/55"
+                      style="color: lightskyblue; text-decoration: underline"
+                      >Enroll Now</a
+                    >
+                  </p>
+                </a>
+              </div>
+              <div class="card-discover">
+                <a href="https://courselist.mfi.org.ph/">
+                  <img
+                    src="https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/11/MFI-News-Website-Size-1.png?resize=250%2C141&ssl=1"
+                    alt="50 % OFF"
+                    width="100%"
+                  />
+                  <h2>Receive up to 50% off on selected courses</h2>
+                  <p>
+                    Enroll now from November 2024 to January 3, 2025 for our
+                    January 2025 short courses and receive up to 50% off on
+                    selected courses.
+                    <br />
+                    <a
+                      href="https://courselist.mfi.org.ph/"
+                      style="color: lightskyblue; text-decoration: underline"
+                      >Enroll Now</a
+                    >
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <section id="video"><img src="IMG.jpg" alt="" /></section>
       <!-- news and announcement -->
-      <section>
+      <section id="news">
         <img src="new.png" alt="" style="width: 100%" />
       </section>
       <!-- footer -->
-      <footer>
+      <footer id="footer">
         <div class="container">
           <!-- MFI Pasig Campus -->
           <div class="campus-info">
@@ -967,8 +1154,8 @@
         setTimeout(() => {
           loading.style.display = "none";
           content.style.opacity = "1"; // Show the content after the fade-out
-        }, 1000); // Match this duration with the CSS transition time for opacity
-      }, 8000); // This will make the fade-out start after 3 seconds
+        }, 1000);
+      }, 8000);
       const headers = [
         "51 Year Anniversary of MFI Polytechnic",
         "Scholarship for employment",
@@ -1112,59 +1299,6 @@
         }
 
         startScrolling(); // Initialize scrolling
-      });
-      // Array of valid search terms without the hash
-      const search = [
-        "home",
-        "programs",
-        "about-us",
-        "contact-us",
-        "job-opportunities",
-        "dual-training",
-        "scholarship",
-        "short-course",
-        "custom-training",
-        "skills-assessment",
-        "history",
-        "mission-vision",
-        "core-values",
-        "pasig",
-        "pasay",
-        "jalajala",
-        "bot-management",
-        "logo",
-        "campus",
-      ];
-
-      const searchInput = document.querySelector(".search-bar input");
-      const popover = document.querySelector(".popover");
-      const popoverList = document.querySelector("#popover-list");
-
-      searchInput.addEventListener("input", () => {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        popoverList.innerHTML = ""; // Clear previous suggestions
-        if (searchTerm.length > 0) {
-          const filteredResults = search.filter((term) =>
-            term.includes(searchTerm)
-          );
-          if (filteredResults.length > 0) {
-            popover.style.display = "block";
-            filteredResults.forEach((term) => {
-              const listItem = document.createElement("li");
-              listItem.textContent = term;
-              listItem.onclick = () => {
-                window.location.href = "#" + term;
-                popover.style.display = "none"; // Hide the popover on click
-                searchInput.value = ""; // Clear input after selection
-              };
-              popoverList.appendChild(listItem);
-            });
-          } else {
-            popover.style.display = "none";
-          }
-        } else {
-          popover.style.display = "none";
-        }
       });
     </script>
   </body>
