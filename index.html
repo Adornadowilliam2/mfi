@@ -19,9 +19,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: #d4ebf8;
+        background-color: #d4ebf8; /* Navbar background color */
         padding: 10px 20px;
-        color: #1f509a;
+        color: #1f509a; /* Main text color */
       }
 
       .logo {
@@ -54,28 +54,28 @@
 
       .nav-links li {
         position: relative;
-        border: 1px solid #1f509a;
+        border: 1px solid #1f509a; /* Add border to each nav link */
         border-radius: 4px;
       }
 
       .nav-links a {
-        color: #1f509a;
+        color: #1f509a; /* Main link color */
         text-decoration: none;
         padding: 8px 12px;
         display: flex;
-        align-items: center;
+        align-items: center; /* Align text and icon */
         border-radius: 4px;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s; /* Smooth transition */
       }
 
       .nav-links a:hover {
-        background-color: #0a3981;
-        color: #d4ebf8;
+        background-color: #0a3981; /* Hover effect */
+        color: #d4ebf8; /* Hover text color */
       }
 
       .nav-links a img {
-        margin-left: 8px;
-        vertical-align: middle;
+        margin-left: 8px; /* Space between text and icon */
+        vertical-align: middle; /* Align the icon vertically */
       }
 
       .dropdown:hover .dropdown-menu {
@@ -87,7 +87,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: #0a3981;
+        background-color: #0a3981; /* Dropdown background */
         padding: 10px;
         list-style: none;
         min-width: 180px;
@@ -96,22 +96,22 @@
       }
 
       .dropdown-menu li a {
-        color: #d4ebf8;
+        color: #d4ebf8; /* Dropdown text color */
         padding: 8px 12px;
         display: block;
         border-radius: 4px;
       }
 
       .dropdown-menu li a:hover {
-        background-color: #e38e49;
-        color: #0a3981;
+        background-color: #e38e49; /* Hover effect on dropdown items */
+        color: #0a3981; /* Hover text color on dropdown items */
       }
 
       .search-bar {
         position: relative;
         display: flex;
         align-items: center;
-        border: 1px solid #1f509a;
+        border: 1px solid #1f509a; /* Border color */
         border-radius: 4px;
         overflow: hidden;
       }
@@ -120,12 +120,12 @@
         border: none;
         outline: none;
         padding: 8px 12px;
-        width: 180px;
+        width: 180px; /* Adjust width as needed */
         font-size: 14px;
       }
 
       .search-bar button {
-        background-color: #1f509a;
+        background-color: #1f509a; /* Button color */
         border: none;
         padding: 8px;
         cursor: pointer;
@@ -139,7 +139,7 @@
       }
 
       .search-bar input::placeholder {
-        color: #1f509a;
+        color: #1f509a; /* Placeholder text color */
       }
 
       .popover {
@@ -172,6 +172,7 @@
         background-color: #f0f0f0;
       }
 
+      /* Responsive design */
       @media (max-width: 768px) {
         .nav-links {
           flex-direction: column;
@@ -188,49 +189,49 @@
         }
 
         .search-bar input {
-          width: calc(100% - 40px);
+          width: calc(100% - 40px); /* Full width with padding adjustment */
         }
       }
 
       footer {
-        background-color: #333;
-        color: #ffffff;
+        background-color: #333; /* Dark background color */
+        color: #ffffff; /* Light text color */
         padding: 20px 0;
       }
 
       .container {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        gap: 20px; /* Adds space between sections */
         padding: 0 20px;
       }
 
       .campus-info,
       .fb-page-section {
-        flex: 1;
-        min-width: 250px;
-        background-color: #444;
+        flex: 1; /* Allows each section to grow equally */
+        min-width: 250px; /* Ensures sections don't get too narrow */
+        background-color: #444; /* Slightly lighter dark background */
         padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 5px; /* Rounded corners for a softer look */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
       }
 
       .campus-info h3,
       .fb-page-section h3 {
         margin-top: 0;
-        color: #e38e49;
+        color: #e38e49; /* Highlight color for headings */
       }
 
       .campus-info p,
       .campus-info ul,
       .fb-page-section p {
         margin: 5px 0;
-        color: #ddd;
+        color: #ddd; /* Light text for readability */
       }
 
       .fb-page {
-        width: 100%;
+        width: 100%; /* Full width for responsive display */
       }
 
       .whatsapp-link {
@@ -246,13 +247,13 @@
 
       @media (max-width: 768px) {
         .container {
-          flex-direction: column;
+          flex-direction: column; /* Stack sections vertically on smaller screens */
         }
 
         .campus-info,
         .fb-page-section {
-          min-width: 100%;
-          margin-bottom: 20px;
+          min-width: 100%; /* Full width for smaller screens */
+          margin-bottom: 20px; /* Add space between stacked sections */
         }
       }
 
@@ -260,7 +261,8 @@
         position: fixed;
         top: 50%;
         right: 0;
-        width: 80px;
+        width: 80px; /* Default for larger screens */
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -272,42 +274,42 @@
       .icon-item {
         position: relative;
         text-align: center;
-        margin-bottom: 15px;
+        margin-bottom: 15px; /* Space between icons */
         cursor: pointer;
         background-color: #dddddd6b;
       }
 
       .icon {
-        width: 40px;
-        height: 40px;
-        border: 2px solid #000;
-        border-radius: 8px;
+        width: 40px; /* Default icon size */
+        height: 40px; /* Default icon size */
+        border: 2px solid #000; /* White border for better contrast */
+        border-radius: 8px; /* Rounded corners for a smoother look */
         padding: 5px;
         box-sizing: border-box;
         cursor: pointer;
-        transition: border-color 0.3s, transform 0.3s;
+        transition: border-color 0.3s, transform 0.3s; /* Smooth transition */
       }
 
       .icon:hover {
-        border-color: #e38e49;
-        transform: scale(1.1);
+        border-color: #e38e49; /* Border color change on hover */
+        transform: scale(1.1); /* Slight scaling effect on hover */
       }
 
       .tooltip {
         position: absolute;
-        top: -35px;
+        top: -35px; /* Adjusted to fit above the icon */
         left: 50%;
         transform: translateX(-50%);
-        background-color: #ffffff;
+        background-color: #ffffff; /* Lighter color for dark icons */
         color: #0a3981;
         padding: 5px 10px;
         border-radius: 5px;
         visibility: hidden;
         opacity: 0;
         transition: opacity 0.3s;
-        font-size: 12px;
+        font-size: 12px; /* Improved readability */
         white-space: nowrap;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         border: 1px solid black;
       }
 
@@ -319,41 +321,43 @@
       .icon-item:hover {
         background-color: #e38e49;
         border-radius: 50%;
-        padding: 8px;
+        padding: 8px; /* Adjusted padding */
       }
 
+      /* Media query for smaller screens */
       @media (max-width: 600px) {
         .sidebar {
-          width: 60px;
+          width: 60px; /* Reduce sidebar width */
         }
 
         .icon {
-          width: 30px;
-          height: 30px;
+          width: 30px; /* Smaller icon size */
+          height: 30px; /* Smaller icon size */
         }
 
         .tooltip {
-          font-size: 10px;
-          top: -25px;
+          font-size: 10px; /* Smaller tooltip text */
+          top: -25px; /* Adjust tooltip position */
         }
       }
 
       @media (max-width: 400px) {
         .sidebar {
-          width: 50px;
+          width: 50px; /* Even smaller for very narrow screens */
         }
 
         .icon {
-          width: 25px;
-          height: 25px;
+          width: 25px; /* Smaller icon size */
+          height: 25px; /* Smaller icon size */
         }
 
         .tooltip {
-          font-size: 8px;
-          top: -20px;
+          font-size: 8px; /* Even smaller tooltip text */
+          top: -20px; /* Adjust tooltip position */
         }
       }
 
+      /* General resets */
       body,
       h1,
       h2,
@@ -408,144 +412,308 @@
       .cta-button {
         background-color: #3498db;
         color: #ffffff;
+        border: none;
+        border-radius: 5px;
         padding: 15px 30px;
-        font-size: 1.2rem;
-        text-decoration: none;
-        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 10px 0 0 0;
       }
 
       .cta-button:hover {
         background-color: #2980b9;
       }
 
-      .features {
+      footer {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #7f8c8d;
+      }
+      main {
+        text-align: left;
+        padding: 10px;
+      }
+
+      /* Responsive design */
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        .cta-section h2 {
+          font-size: 1.5rem;
+        }
+
+        .cta-section p {
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Container for the marquee */
+      .marquee {
+        width: 100%; /* Full width */
+        overflow: hidden; /* Hide content that's scrolled out */
+        position: relative;
+        background-color: #f0f0f0; /* Optional, change background color */
+      }
+
+      /* Content that moves inside the marquee */
+      .marquee-content {
+        display: flex;
+        mix-blend-mode: multiply;
+        transition: transform 0.2s ease-out; /* Smooth transition for images */
+      }
+
+      /* Styling for the images */
+      .marquee-content img {
+        height: 50px; /* Adjust the height of the images */
+        margin-right: 20px; /* Space between the images */
+      }
+
+      .programs {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .programs h2 {
+        color: #1f509a; /* Deep Blue */
+        margin-bottom: 30px;
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+
+      .card-program {
+        position: relative;
+        display: inline-block;
+        width: 250px;
+        margin: 15px;
+        padding: 15px;
+        border: 2px solid #1f509a; /* Deep Blue Border */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* White Background for Cards */
+        transition: transform 0.3s, box-shadow 0.3s;
+        overflow: hidden; /* Ensures content doesn't overflow */
+      }
+
+      .card-program img {
+        width: 100%;
+        max-width: 100px; /* Adjust as needed */
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      .card-program p {
+        font-size: 1.1rem;
+        color: #0a3981; /* Dark Blue */
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .card-program:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-program::after {
+        content: attr(
+          data-title
+        ); /* Fetches the value from the data-title attribute */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 6px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .card-program:hover::after {
+        opacity: 1; /* Shows the title on hover */
+      }
+
+      .card-program:nth-child(odd) {
+        border-color: #1f509a; /* Deep Blue Border */
+      }
+
+      .card-program:nth-child(odd):hover {
+        border-color: #0a3981; /* Dark Blue Border on hover */
+      }
+
+      .anniversary-title {
+        color: #1f509a; /* Deep Blue for the main text */
+        font-size: 2.5rem; /* Larger font size */
+        font-weight: bold; /* Make it bold for emphasis */
+        text-align: center; /* Center the text */
+        background: linear-gradient(
+          90deg,
+          #0a3981,
+          #e38e49
+        ); /* Gradient background */
+        -webkit-background-clip: text; /* Clip the background to text */
+        color: transparent; /* Make the text color transparent so the gradient shows */
+        padding: 10px; /* Add some padding */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+        margin-bottom: 20px; /* Increased margin for spacing */
+      }
+
+      .milestone-text {
+        color: #0a3981; /* Dark Blue */
+        font-size: 1.1rem; /* Slightly larger font size for readability */
+        line-height: 1.1; /* Add space between lines */
+        font-family: "Arial", sans-serif; /* Clean and modern font */
+        text-align: justify;
+        width: 90%;
+      }
+
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Optional: add a semi-transparent background */
+        z-index: 1000; /* Make sure the GIF overlays everything */
+        transition: opacity 1s ease-out;
+      }
+
+      .loading img {
+        width: auto;
+        max-width: 100%;
+        max-height: 100%; /* Scale the image to fit within the viewport */
+      }
+
+      .mfi-content {
+        opacity: 0; /* Initially hidden */
+        transition: opacity 1s ease-in-out; /* Smooth transition for appearance */
+        z-index: 1; /* Ensure content is layered above the background */
+        position: relative;
+      }
+
+      .body-discover {
+        font-family: "Arial", sans-serif;
+        background-color: #e4f0f8; /* Light blue background */
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .discover {
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .card-discover-container .icon {
+        width: 50px; /* Set the size of the icon */
+        height: auto;
+      }
+
+      .card-discover-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
       }
 
-      .feature-item {
-        background-color: #f4f4f4;
-        padding: 20px;
-        border-radius: 8px;
+      .card-discover {
+        background: linear-gradient(135deg, #d4ebf8, #1f509a, #0a3981, #e38e49);
+        border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .feature-item h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-      }
-
-      .feature-item p {
-        font-size: 1rem;
-        color: #7f8c8d;
-      }
-
-      .testimonials {
-        background-color: #ecf0f1;
-        padding: 40px 20px;
-      }
-
-      .testimonial {
+        overflow: hidden;
+        padding: 15px;
         display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-
-      .testimonial img {
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-        margin-right: 20px;
-      }
-
-      .testimonial p {
-        font-size: 1rem;
-        color: #2c3e50;
-      }
-
-      .testimonial h4 {
-        font-size: 1.2rem;
-        color: #2980b9;
-        margin-top: 5px;
-      }
-
-      footer {
-        background-color: #2c3e50;
-        color: #ffffff;
-        padding: 20px;
-      }
-
-      footer .container {
-        display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        gap: 20px;
+        align-items: flex-start; /* Align content to the left */
+        text-align: left; /* Ensure text is left-aligned */
+        height: 400px; /* Set a consistent height for all cards */
+        transition: transform 0.3s, box-shadow 0.3s;
       }
 
-      footer .container .column {
-        flex: 1;
-        min-width: 250px;
+      .card-discover iframe {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Add space between iframe and content */
       }
 
-      footer .container .column h3 {
-        color: #e38e49;
+      .card-discover img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px; /* Add space between image and content */
       }
 
-      footer .container .column ul {
-        list-style: none;
-        padding: 0;
+      .card-discover h2 {
+        color: #ffffff;
+        margin: 10px 0; /* Adjust spacing */
       }
 
-      footer .container .column ul li {
-        margin: 5px 0;
+      .card-discover p {
+        color: #f9f9f9;
+        margin: 0 0 10px; /* Adjust spacing */
+        line-height: 1.6; /* Improve readability */
       }
 
-      footer .container .column ul li a {
-        color: #bdc3c7;
+      .card-discover a {
+        color: #ffffff;
+        text-decoration: underline;
+        font-weight: bold;
+        transition: color 0.3s;
         text-decoration: none;
       }
 
-      footer .container .column ul li a:hover {
-        color: #e38e49;
+      .card-discover a:hover {
+        color: #ffdc60; /* Highlight color */
       }
 
-      footer .social-media {
-        display: flex;
-        gap: 10px;
+      .card-discover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      html {
+        scroll-behavior: smooth;
       }
 
-      footer .social-media a {
-        color: #ffffff;
-        font-size: 1.5rem;
-      }
-
-      footer .social-media a:hover {
-        color: #e38e49;
-      }
-
-      footer .subscribe-form {
-        display: flex;
-        gap: 10px;
-      }
-
-      footer .subscribe-form input {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        flex: 1;
-      }
-
-      footer .subscribe-form button {
-        padding: 10px;
-        background-color: #3498db;
-        color: #ffffff;
+      /* Style for the left and right arrows */
+      .prev-btn,
+      .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background-color: transparent;
         border: none;
-        border-radius: 4px;
         cursor: pointer;
+        color: #fff;
+        z-index: 1;
       }
 
-      footer .subscribe-form button:hover {
-        background-color: #2980b9;
+      .prev-btn {
+        left: 10px;
+      }
+
+      .next-btn {
+        right: 10px;
+      }
+
+      /* Optional: Make arrows more visible */
+      .prev-btn:hover,
+      .next-btn:hover {
+        color: #ff6347; /* Change color on hover */
       }
     </style>
   </head>
@@ -693,8 +861,8 @@
           </main>
 
           <!-- Arrow buttons for navigation -->
-          <button class="prev-btn" style="border: none">⬅️</button>
-          <button class="next-btn" style="border: none">➡️</button>
+          <button class="prev-btn">⬅️</button>
+          <button class="next-btn">➡️</button>
         </div>
 
         <div class="marquee">
@@ -1122,7 +1290,7 @@
         Semiconductor Manufacturing Technology  Industrial Electrical Technology  Network System and Security Administration  Don’t miss this opportunity to level up your skills and secure your future!`,
         `<p style="font-size="15px">
       Enrollment is now ongoing!
-      MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025
+      MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025 
       Empowering You with Choice and Opportunity:  <br>
       <ul>
         <li>Automotive Technology </li>
@@ -1183,7 +1351,7 @@
         h1.style.opacity = 1;
         btn.style.opacity = 1;
 
-        count = (count + 1) % headers.length;
+        count = (count + 1) % headers.length; // Wrap around to 0 when reaching the end
       };
 
       // Start content update cycle
@@ -1225,6 +1393,7 @@
         startContentInterval(); // Restart automatic cycling after short delay
       });
 
+      // Initial content update and start interval
       updateContent();
       startContentInterval();
 
@@ -1236,7 +1405,7 @@
           "three.png",
           "four.png",
           "five.png",
-        ];
+        ]; // Array of image sources
         const totalImages = 100; // Number of images to generate
 
         // Generate 100 images dynamically
