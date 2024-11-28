@@ -539,25 +539,12 @@
         opacity: 1; /* Shows the title on hover */
       }
 
-      .card-program:nth-child(even) {
-        border-color: #e38e49; /* Orange Border */
-      }
-
       .card-program:nth-child(odd) {
         border-color: #1f509a; /* Deep Blue Border */
       }
 
       .card-program:nth-child(odd):hover {
         border-color: #0a3981; /* Dark Blue Border on hover */
-      }
-
-      .card-program:nth-child(even):hover {
-        border-color: #e38e49; /* Orange Border on hover */
-        color: #e38e49; /* Text color on hover */
-      }
-
-      .card-program:nth-child(even) p {
-        color: #e38e49; /* Orange Text */
       }
 
       .anniversary-title {
@@ -1293,32 +1280,28 @@
       ];
       const paragraphs = [
         `   We extend our heartfelt gratitude to everyone who has been a
-                            part of our journey. Reaching this 51-year milestone is a
-                            testament to the dedication, hard work, and unwavering support
-                            of our students, faculty, alumni, and community. At MFI
-                            Polytechnic, we continue to strive for excellence and
-                            innovation, empowering future generations to lead in the
-                            ever-evolving world of technology and education.`,
+            part of our journey. Reaching this 51-year milestone is a
+            testament to the dedication, hard work, and unwavering support
+            of our students, faculty, alumni, and community. At MFI
+            Polytechnic, we continue to strive for excellence and
+            innovation, empowering future generations to lead in the
+            ever-evolving world of technology and education.`,
         `GT Foundation and Analog Devices are proud to offer scholarships at MFI Polytechnic Institute for the following programs:
-
-            Semiconductor Manufacturing Technology
-            Industrial Electrical Technology
-            Network System and Security Administration
-            Don’t miss this opportunity to level up your skills and secure your future!`,
-        `
+        Semiconductor Manufacturing Technology  Industrial Electrical Technology  Network System and Security Administration  Don’t miss this opportunity to level up your skills and secure your future!`,
+        `<p style="font-size="15px">
       Enrollment is now ongoing!
-      MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025
-
-      Empowering You with Choice and Opportunity:
-
-      Automotive Technology
-      Digital Arts and Design
-      Industrial Automation and Mechatronics Technology
-      Information Technology
-      Integrated Technology Training Program
-      Network Security and System Administration
-      Industrial Electrical Technology
-      `,
+      MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025 
+      Empowering You with Choice and Opportunity:  <br>
+      <ul>
+        <li>Automotive Technology </li>
+        <li>Digital Arts and Design  </li>
+        <li>Industrial Automation and Mechatronics Technology </li>
+        <li>Information Technology  </li>
+        <li>Integrated Technology Training Program  </li>
+        <li>Network Security and System Administration  </li>
+        <li>Industrial Electrical Technology </li>
+      </ul>
+      </p>`,
         `Our Integrated Technology training program offers a unique blend of theoretical knowledge and hands-on experience to propel you toward a successful career.
       `,
         `Hundreds of courses available
@@ -1356,7 +1339,7 @@
 
         img.src = imageurls[count];
         h1.textContent = headers[count];
-        p.textContent = paragraphs[count];
+        p.innerHTML = paragraphs[count];
         btn.textContent = btnCalls[count];
 
         // Trigger reflow to restart transition
@@ -1373,7 +1356,7 @@
 
       // Start content update cycle
       const startContentInterval = () => {
-        contentInterval = setInterval(updateContent, 2000);
+        contentInterval = setInterval(updateContent, 3000);
       };
 
       // Pause the interval when hovering
