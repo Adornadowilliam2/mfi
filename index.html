@@ -262,7 +262,7 @@
         top: 50%;
         right: 0;
         width: 80px; /* Default for larger screens */
-        background-color: #1f509a;
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -282,7 +282,7 @@
       .icon {
         width: 40px; /* Default icon size */
         height: 40px; /* Default icon size */
-        border: 2px solid #ffffff; /* White border for better contrast */
+        border: 2px solid #000; /* White border for better contrast */
         border-radius: 8px; /* Rounded corners for a smoother look */
         padding: 5px;
         box-sizing: border-box;
@@ -700,6 +700,34 @@
       html {
         scroll-behavior: smooth;
       }
+
+      /* Style for the left and right arrows */
+      .prev-btn,
+      .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        z-index: 1;
+      }
+
+      .prev-btn {
+        left: 10px;
+      }
+
+      .next-btn {
+        right: 10px;
+      }
+
+      /* Optional: Make arrows more visible */
+      .prev-btn:hover,
+      .next-btn:hover {
+        color: #ff6347; /* Change color on hover */
+      }
     </style>
   </head>
   <body>
@@ -836,22 +864,20 @@
                 <h2 class="anniversary-title">
                   51 Year Anniversary of MFI Polytechnic
                 </h2>
-
                 <p class="milestone-text">
                   We extend our heartfelt gratitude to everyone who has been a
-                  part of our journey. Reaching this 51-year milestone is a
-                  testament to the dedication, hard work, and unwavering support
-                  of our students, faculty, alumni, and community. At MFI
-                  Polytechnic, we continue to strive for excellence and
-                  innovation, empowering future generations to lead in the
-                  ever-evolving world of technology and education.
+                  part of our journey...
                 </p>
-
                 <button class="cta-button">Learn More</button>
               </span>
             </section>
           </main>
+
+          <!-- Arrow buttons for navigation -->
+          <button class="prev-btn">⬅️</button>
+          <button class="next-btn">➡️</button>
         </div>
+
         <div class="marquee">
           <div class="marquee-content">
             <!-- Images will be dynamically generated here -->
@@ -1156,14 +1182,107 @@
           content.style.opacity = "1"; // Show the content after the fade-out
         }, 1000);
       }, 8000);
+      // const headers = [
+      //   "51 Year Anniversary of MFI Polytechnic",
+      //   "Scholarship for employment",
+      //   "Enrollment is now ongoing!",
+      //   "Integrated Technology Training Program (ITTP)",
+      //   `
+      //         Hundred of courses available
+      // `,
+      // ];
+      // const imageurls = [
+      //   "51 Year.jpg",
+      //   "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/10/SCHOLARSHIP-FOR-ROLLING-SCHED.png?resize=980%2C551&ssl=1",
+      //   "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/09/resized-ENROLLMENT-IS-NOW-ONGOING.jpg?resize=980%2C551&ssl=1",
+      //   "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/08/ITTP-website-banner.png?resize=980%2C551&ssl=1",
+      //   "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/09/resized-TTAP-WEBSITE-BANNER.jpg?resize=980%2C551&ssl=1",
+      // ];
+      // const paragraphs = [
+      //   `   We extend our heartfelt gratitude to everyone who has been a
+      //                       part of our journey. Reaching this 51-year milestone is a
+      //                       testament to the dedication, hard work, and unwavering support
+      //                       of our students, faculty, alumni, and community. At MFI
+      //                       Polytechnic, we continue to strive for excellence and
+      //                       innovation, empowering future generations to lead in the
+      //                       ever-evolving world of technology and education.`,
+      //   `GT Foundation and Analog Devices are proud to offer scholarships at MFI Polytechnic Institute for the following programs:
+
+      //       Semiconductor Manufacturing Technology
+      //       Industrial Electrical Technology
+      //       Network System and Security Administration
+      //       Don’t miss this opportunity to level up your skills and secure your future!`,
+      //   `
+      // Enrollment is now ongoing!
+      // MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025
+
+      // Empowering You with Choice and Opportunity:
+
+      // Automotive Technology
+      // Digital Arts and Design
+      // Industrial Automation and Mechatronics Technology
+      // Information Technology
+      // Integrated Technology Training Program
+      // Network Security and System Administration
+      // Industrial Electrical Technology
+      // `,
+      //   `Our Integrated Technology training program offers a unique blend of theoretical knowledge and hands-on experience to propel you toward a successful career.
+      // `,
+      //   `Hundreds of courses available
+      // MFI has gone a long way since 1973, evolving into a fully operational educational institution that provides the general public with world-class technical skills education and training.
+      // `,
+      // ];
+      // const btnCalls = [
+      //   "Learn More",
+      //   "Apply Now",
+      //   "Enroll Now",
+      //   "Learn More",
+      //   "See all courses",
+      // ];
+
+      // // Query elements
+      // const grid = document.querySelector(".child-home-container");
+      // const img = document.querySelector(".image-container img");
+      // const h1 = document.querySelector(".anniversary-title");
+      // const p = document.querySelector(".milestone-text");
+      // const btn = document.querySelector(".cta-button");
+
+      // let count = 0;
+
+      // const updateContent = () => {
+      //   // Set initial state for the grid and elements
+      //   grid.style.opacity = 0;
+      //   img.classList.remove("show");
+      //   p.style.opacity = 0;
+      //   h1.style.opacity = 0;
+      //   btn.style.opacity = 0;
+
+      //   // Set new content
+      //   img.src = imageurls[count];
+      //   h1.textContent = headers[count];
+      //   p.textContent = paragraphs[count];
+      //   btn.textContent = btnCalls[count];
+
+      //   // Trigger reflow to restart transition
+      //   void grid.offsetWidth;
+
+      //   // Apply animations
+      //   grid.style.opacity = 1;
+      //   img.classList.add("show");
+      //   p.style.opacity = 1;
+      //   h1.style.opacity = 1;
+      //   btn.style.opacity = 1;
+
+      //   count = (count + 1) % headers.length; // Wrap around to 0 when reaching the end
+      // };
+
+      // setInterval(updateContent, 2000);
       const headers = [
         "51 Year Anniversary of MFI Polytechnic",
         "Scholarship for employment",
         "Enrollment is now ongoing!",
         "Integrated Technology Training Program (ITTP)",
-        `
-              Hundred of courses available
-      `,
+        `Hundreds of courses available`,
       ];
       const imageurls = [
         "51 Year.jpg",
@@ -1222,16 +1341,19 @@
       const btn = document.querySelector(".cta-button");
 
       let count = 0;
+      let isHovered = false; // Flag to track hover state
+      let contentInterval = null; // Variable for the interval ID
 
+      // Function to update the content
       const updateContent = () => {
-        // Set initial state for the grid and elements
+        if (isHovered) return; // Stop content change if hovered
+
         grid.style.opacity = 0;
         img.classList.remove("show");
         p.style.opacity = 0;
         h1.style.opacity = 0;
         btn.style.opacity = 0;
 
-        // Set new content
         img.src = imageurls[count];
         h1.textContent = headers[count];
         p.textContent = paragraphs[count];
@@ -1240,7 +1362,6 @@
         // Trigger reflow to restart transition
         void grid.offsetWidth;
 
-        // Apply animations
         grid.style.opacity = 1;
         img.classList.add("show");
         p.style.opacity = 1;
@@ -1250,10 +1371,49 @@
         count = (count + 1) % headers.length; // Wrap around to 0 when reaching the end
       };
 
-      setInterval(updateContent, 2000);
+      // Start content update cycle
+      const startContentInterval = () => {
+        contentInterval = setInterval(updateContent, 2000);
+      };
 
-      // Initial content setup
+      // Pause the interval when hovering
+      const stopContentInterval = () => {
+        clearInterval(contentInterval);
+      };
+
+      // Add hover event listeners to stop and resume the content change
+      img.addEventListener("mouseenter", () => {
+        isHovered = true; // Set hover flag when mouse enters
+        stopContentInterval(); // Stop interval on hover
+      });
+
+      img.addEventListener("mouseleave", () => {
+        isHovered = false; // Reset hover flag when mouse leaves
+        startContentInterval(); // Restart interval when mouse leaves
+      });
+
+      // Left arrow button (previous content)
+      const prevBtn = document.querySelector(".prev-btn");
+      prevBtn.addEventListener("click", () => {
+        count = (count - 1 + headers.length) % headers.length; // Go to previous item, wrapping around
+        updateContent();
+        stopContentInterval(); // Stop automatic cycling when user clicks
+        startContentInterval(); // Restart automatic cycling after short delay
+      });
+
+      // Right arrow button (next content)
+      const nextBtn = document.querySelector(".next-btn");
+      nextBtn.addEventListener("click", () => {
+        count = (count + 1) % headers.length; // Go to next item, wrapping around
+        updateContent();
+        stopContentInterval(); // Stop automatic cycling when user clicks
+        startContentInterval(); // Restart automatic cycling after short delay
+      });
+
+      // Initial content update and start interval
       updateContent();
+      startContentInterval();
+
       document.addEventListener("DOMContentLoaded", function () {
         const marqueeContent = document.querySelector(".marquee-content");
         const imageSources = [
