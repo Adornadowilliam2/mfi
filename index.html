@@ -10,6 +10,10 @@
       type="image/x-icon"
     />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -19,9 +23,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: #d4ebf8; /* Navbar background color */
+        background-color: #d4ebf8;
         padding: 10px 20px;
-        color: #1f509a; /* Main text color */
+        color: #1f509a;
       }
 
       .logo {
@@ -54,28 +58,28 @@
 
       .nav-links li {
         position: relative;
-        border: 1px solid #1f509a; /* Add border to each nav link */
+        border: 1px solid #1f509a;
         border-radius: 4px;
       }
 
       .nav-links a {
-        color: #1f509a; /* Main link color */
+        color: #1f509a;
         text-decoration: none;
         padding: 8px 12px;
         display: flex;
-        align-items: center; /* Align text and icon */
+        align-items: center;
         border-radius: 4px;
-        transition: background-color 0.3s; /* Smooth transition */
+        transition: background-color 0.3s;
       }
 
       .nav-links a:hover {
-        background-color: #0a3981; /* Hover effect */
-        color: #d4ebf8; /* Hover text color */
+        background-color: #0a3981;
+        color: #d4ebf8;
       }
 
       .nav-links a img {
-        margin-left: 8px; /* Space between text and icon */
-        vertical-align: middle; /* Align the icon vertically */
+        margin-left: 8px;
+        vertical-align: middle;
       }
 
       .dropdown:hover .dropdown-menu {
@@ -87,7 +91,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: #0a3981; /* Dropdown background */
+        background-color: #0a3981;
         padding: 10px;
         list-style: none;
         min-width: 180px;
@@ -96,22 +100,22 @@
       }
 
       .dropdown-menu li a {
-        color: #d4ebf8; /* Dropdown text color */
+        color: #d4ebf8;
         padding: 8px 12px;
         display: block;
         border-radius: 4px;
       }
 
       .dropdown-menu li a:hover {
-        background-color: #e38e49; /* Hover effect on dropdown items */
-        color: #0a3981; /* Hover text color on dropdown items */
+        background-color: #e38e49;
+        color: #0a3981;
       }
 
       .search-bar {
         position: relative;
         display: flex;
         align-items: center;
-        border: 1px solid #1f509a; /* Border color */
+        border: 1px solid #1f509a;
         border-radius: 4px;
         overflow: hidden;
       }
@@ -120,12 +124,12 @@
         border: none;
         outline: none;
         padding: 8px 12px;
-        width: 180px; /* Adjust width as needed */
+        width: 180px;
         font-size: 14px;
       }
 
       .search-bar button {
-        background-color: #1f509a; /* Button color */
+        background-color: #1f509a;
         border: none;
         padding: 8px;
         cursor: pointer;
@@ -139,7 +143,7 @@
       }
 
       .search-bar input::placeholder {
-        color: #1f509a; /* Placeholder text color */
+        color: #1f509a;
       }
 
       .popover {
@@ -189,29 +193,29 @@
         }
 
         .search-bar input {
-          width: calc(100% - 40px); /* Full width with padding adjustment */
+          width: calc(100% - 40px);
         }
       }
 
       footer {
-        background-color: #333; /* Dark background color */
-        color: #ffffff; /* Light text color */
+        background-color: #333;
+        color: #ffffff;
         padding: 20px 0;
       }
 
       .container {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap; /* Allows wrapping on smaller screens */
-        gap: 20px; /* Adds space between sections */
+        flex-wrap: wrap;
+        gap: 20px;
         padding: 0 20px;
       }
 
       .campus-info,
       .fb-page-section {
-        flex: 1; /* Allows each section to grow equally */
-        min-width: 250px; /* Ensures sections don't get too narrow */
-        background-color: #444; /* Slightly lighter dark background */
+        flex: 1;
+        min-width: 250px;
+        background-color: #444;
         padding: 15px;
         border-radius: 5px; /* Rounded corners for a softer look */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
@@ -677,18 +681,14 @@
       }
 
       .card-discover a:hover {
-        color: #ffdc60; /* Highlight color */
+        color: #ffdc60;
       }
 
       .card-discover:hover {
         transform: translateY(-5px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
-      html {
-        scroll-behavior: smooth;
-      }
 
-      /* Style for the left and right arrows */
       .prev-btn,
       .next-btn {
         position: absolute;
@@ -710,10 +710,9 @@
         right: 10px;
       }
 
-      /* Optional: Make arrows more visible */
       .prev-btn:hover,
       .next-btn:hover {
-        color: #ff6347; /* Change color on hover */
+        color: #ff6347;
       }
     </style>
   </head>
@@ -861,8 +860,12 @@
           </main>
 
           <!-- Arrow buttons for navigation -->
-          <button class="prev-btn" style="border: none">⬅️</button>
-          <button class="next-btn" style="border: none">➡️</button>
+          <button class="prev-btn" style="border: none">
+            <img src="left-arrow.png" alt="left arrow" width="30px" />
+          </button>
+          <button class="next-btn" style="border: none">
+            <img src="right-arrow.png" alt="right arrow" width="30px" />
+          </button>
         </div>
 
         <div class="marquee">
@@ -1159,14 +1162,11 @@
       const loading = document.querySelector(".loading");
       const content = document.querySelector(".mfi-content");
 
-      /**
-       * Make the gif fade out after 3 seconds and show the content
-       */
       setTimeout(() => {
         loading.style.opacity = "0";
         setTimeout(() => {
           loading.style.display = "none";
-          content.style.opacity = "1"; // Show the content after the fade-out
+          content.style.opacity = "1";
         }, 1000);
       }, 8000);
       // const headers = [
@@ -1289,24 +1289,24 @@
         `GT Foundation and Analog Devices are proud to offer scholarships at MFI Polytechnic Institute for the following programs:
         Semiconductor Manufacturing Technology  Industrial Electrical Technology  Network System and Security Administration  Don’t miss this opportunity to level up your skills and secure your future!`,
         `<p style="font-size="15px">
-      Enrollment is now ongoing!
-      MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025 
-      Empowering You with Choice and Opportunity:  <br>
-      <ul>
-        <li>Automotive Technology </li>
-        <li>Digital Arts and Design  </li>
-        <li>Industrial Automation and Mechatronics Technology </li>
-        <li>Information Technology  </li>
-        <li>Integrated Technology Training Program  </li>
-        <li>Network Security and System Administration  </li>
-        <li>Industrial Electrical Technology </li>
-      </ul>
-      </p>`,
+          Enrollment is now ongoing!
+          MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025 
+          Empowering You with Choice and Opportunity:  <br>
+          <ul>
+            <li>Automotive Technology </li>
+            <li>Digital Arts and Design  </li>
+            <li>Industrial Automation and Mechatronics Technology </li>
+            <li>Information Technology  </li>
+            <li>Integrated Technology Training Program  </li>
+            <li>Network Security and System Administration  </li>
+            <li>Industrial Electrical Technology </li>
+          </ul>
+          </p>`,
         `Our Integrated Technology training program offers a unique blend of theoretical knowledge and hands-on experience to propel you toward a successful career.
-      `,
+        `,
         `Hundreds of courses available
-      MFI has gone a long way since 1973, evolving into a fully operational educational institution that provides the general public with world-class technical skills education and training.
-      `,
+        MFI has gone a long way since 1973, evolving into a fully operational educational institution that provides the general public with world-class technical skills education and training.
+        `,
       ];
       const btnCalls = [
         "Learn More",
@@ -1316,7 +1316,6 @@
         "See all courses",
       ];
 
-      // Query elements
       const grid = document.querySelector(".child-home-container");
       const img = document.querySelector(".image-container img");
       const h1 = document.querySelector(".anniversary-title");
@@ -1324,12 +1323,11 @@
       const btn = document.querySelector(".cta-button");
 
       let count = 0;
-      let isHovered = false; // Flag to track hover state
-      let contentInterval = null; // Variable for the interval ID
+      let isHovered = false;
+      let contentInterval = null;
 
-      // Function to update the content
       const updateContent = () => {
-        if (isHovered) return; // Stop content change if hovered
+        if (isHovered) return;
 
         grid.style.opacity = 0;
         img.classList.remove("show");
@@ -1342,58 +1340,57 @@
         p.innerHTML = paragraphs[count];
         btn.textContent = btnCalls[count];
 
-        // Trigger reflow to restart transition
+        //static void main args[] rahhhh
         void grid.offsetWidth;
 
         grid.style.opacity = 1;
+
         img.classList.add("show");
         p.style.opacity = 1;
         h1.style.opacity = 1;
         btn.style.opacity = 1;
 
-        count = (count + 1) % headers.length; // Wrap around to 0 when reaching the end
+        count = (count + 1) % headers.length;
       };
 
-      // Start content update cycle
+      //update every 3 seconds
       const startContentInterval = () => {
         contentInterval = setInterval(updateContent, 3000);
       };
 
-      // Pause the interval when hovering
+      // Pause the animation
       const stopContentInterval = () => {
         clearInterval(contentInterval);
       };
 
-      // Add hover event listeners to stop and resume the content change
+      //para sa button
       img.addEventListener("mouseenter", () => {
-        isHovered = true; // Set hover flag when mouse enters
-        stopContentInterval(); // Stop interval on hover
+        isHovered = true;
+        stopContentInterval();
       });
 
       img.addEventListener("mouseleave", () => {
-        isHovered = false; // Reset hover flag when mouse leaves
-        startContentInterval(); // Restart interval when mouse leaves
+        isHovered = false;
+        startContentInterval();
       });
 
-      // Left arrow button (previous content)
       const prevBtn = document.querySelector(".prev-btn");
       prevBtn.addEventListener("click", () => {
-        count = (count - 1 + headers.length) % headers.length; // Go to previous item, wrapping around
+        count = (count - 1 + headers.length) % headers.length;
         updateContent();
-        stopContentInterval(); // Stop automatic cycling when user clicks
-        startContentInterval(); // Restart automatic cycling after short delay
+        stopContentInterval();
+        startContentInterval();
       });
 
       // Right arrow button (next content)
       const nextBtn = document.querySelector(".next-btn");
       nextBtn.addEventListener("click", () => {
-        count = (count + 1) % headers.length; // Go to next item, wrapping around
+        count = (count + 1) % headers.length;
         updateContent();
-        stopContentInterval(); // Stop automatic cycling when user clicks
-        startContentInterval(); // Restart automatic cycling after short delay
+        stopContentInterval();
+        startContentInterval();
       });
 
-      // Initial content update and start interval
       updateContent();
       startContentInterval();
 
@@ -1405,42 +1402,37 @@
           "three.png",
           "four.png",
           "five.png",
-        ]; // Array of image sources
-        const totalImages = 100; // Number of images to generate
+        ];
+        const totalImages = 100; // Number of images to generate because why not hahahhahahah useless initialize
 
-        // Generate 100 images dynamically
         for (let i = 0; i < totalImages; i++) {
-          const imageIndex = i % imageSources.length; // Cycle through the image sources
+          const imageIndex = i % imageSources.length;
           const image = document.createElement("img");
           image.src = imageSources[imageIndex];
           image.alt = `Image ${imageIndex + 1}`;
           marqueeContent.appendChild(image);
         }
 
-        // Function to handle the scrolling effect
         function startScrolling() {
-          const imageWidth = marqueeContent.children[0].offsetWidth + 20; // Width of each image including margin
-          const totalWidth = imageWidth * marqueeContent.children.length; // Total width of all images
+          const imageWidth = marqueeContent.children[0].offsetWidth + 20;
+          const totalWidth = imageWidth * marqueeContent.children.length;
           let currentPosition = 0;
 
-          // Scroll the content by updating its transform property
           function scroll() {
-            currentPosition -= 1; // Move left by 1px
+            currentPosition -= 1;
             marqueeContent.style.transform = `translateX(${currentPosition}px)`;
 
-            // If the first image is out of view, reset the position to start again
             if (currentPosition <= -totalWidth) {
               currentPosition = 0;
             }
 
-            requestAnimationFrame(scroll); // Continue the animation
+            requestAnimationFrame(scroll);
           }
 
-          // Start scrolling animation
           scroll();
         }
 
-        startScrolling(); // Initialize scrolling
+        startScrolling();
       });
     </script>
   </body>
