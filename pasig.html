@@ -126,6 +126,7 @@
         align-items: center;
         justify-content: space-evenly;
         gap: 10px;
+        animation: slideRight 5s alternate;
       "
     >
       <span style="padding: 20px">
@@ -194,19 +195,19 @@
     <div class="gallery">
       <div class="gallery-item">
         <img src="Copy of 2.png" alt="Facility 1" />
-        <p>Facility 1 Description</p>
+        <p>Attrium Front</p>
       </div>
       <div class="gallery-item">
         <img src="Copy of 4.png" alt="Facility 2" />
-        <p>Facility 2 Description</p>
+        <p>Library</p>
       </div>
       <div class="gallery-item">
         <img src="ATRIUM-3.JPG" alt="Facility 3" />
-        <p>Facility 3 Description</p>
+        <p>Attrium Back</p>
       </div>
       <div class="gallery-item">
         <img src="MFI IT Building.png" alt="Facility 4" />
-        <p>Facility 4 Description</p>
+        <p>MFi IT Building</p>
       </div>
       <!-- Add more gallery items as needed -->
     </div>
@@ -217,44 +218,99 @@
     >
       Other Facilities
     </h2>
-    <div class="zigzag-container">
-      <div class="zigzag-item left">
-        <img src="room 120.JPG" alt="Facility 5" />
 
-        <p>
-          The Electronics Lab at MFI is equipped with the latest tools and
-          technology to provide hands-on learning experiences. Students have
-          access to advanced circuit boards, soldering stations, and a wide
-          range of electronic components. This facility is designed for students
-          to develop skills in electronics, electrical engineering, and
-          innovative circuit design, preparing them for both academic and
-          industry success.
-        </p>
+    <div class="zigzag-pasig-container" style="margin-bottom: 10px">
+      <div
+        class="zigzag-pasig-item"
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <img src="room 120.JPG" alt="Facility 5" width="400px" />
+        <div>
+          <h1 style="padding: 10px; color: navy">Electronics Lab</h1>
+          <p
+            style="
+              padding: 10px;
+              text-align: justify;
+              background-color: transparent;
+            "
+          >
+            The Electronics Lab at MFI is equipped with the latest tools and
+            technology to provide hands-on learning experiences. Students have
+            access to advanced circuit boards, soldering stations, and a wide
+            range of electronic components. This facility is designed for
+            students to develop skills in electronics, electrical engineering,
+            and innovative circuit design, preparing them for both academic and
+            industry success.
+          </p>
+        </div>
       </div>
-      <div class="zigzag-item right">
-        <img src="room1.JPG" alt="Facility 6" />
-        <p width="100px">
-          FMFI's Senior High School classrooms are designed with comfort and
-          modern learning in mind. Equipped with interactive smart boards,
-          projectors, and flexible seating arrangements, these classrooms foster
-          an engaging and collaborative environment. The curriculum is enriched
-          with the latest educational technologies to enhance learning outcomes
-          and support students' diverse needs.
-        </p>
+      <div
+        class="zigzag-pasig-item"
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: row-reverse;
+        "
+      >
+        <img src="room1.JPG" alt="Facility 5" width="400px" />
+        <div>
+          <h1 style="padding: 10px; color: navy">
+            MFI's Senior High School classrooms
+          </h1>
+          <p
+            style="
+              padding: 10px;
+              text-align: justify;
+              background-color: transparent;
+            "
+          >
+            The Electronics Lab at MFI is equipped with the latest tools and
+            technology to provide hands-on learning experiences. Students have
+            access to advanced circuit boards, soldering stations, and a wide
+            range of electronic components. This facility is designed for
+            students to develop skills in electronics, electrical engineering,
+            and innovative circuit design, preparing them for both academic and
+            industry success.
+          </p>
+        </div>
       </div>
-      <div class="zigzag-item left">
-        <img src="301.JPG" alt="Facility 7" />
-        <p>
-          The Short Course Training Center at MFI is dedicated to providing
-          specialized training programs in various technologies and fields. From
-          IT certifications to hands-on workshops in digital marketing and
-          graphic design, this facility caters to individuals looking to boost
-          their skills and advance their careers. The center is equipped with
-          state-of-the-art computers, software, and dedicated spaces for
-          practical training and group activities.
-        </p>
+      <div
+        class="zigzag-pasig-item"
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <img src="301.JPG" alt="Facility 5" width="400px" />
+        <div>
+          <h1 style="padding: 10px; color: navy">
+            Short Course Training Center
+          </h1>
+          <p
+            style="
+              padding: 10px;
+              text-align: justify;
+              background-color: transparent;
+            "
+          >
+            The Short Course Training Center at MFI is dedicated to providing
+            specialized training programs in various technologies and fields.
+            From IT certifications to hands-on workshops in digital marketing
+            and graphic design, this facility caters to individuals looking to
+            boost their skills and advance their careers. The center is equipped
+            with state-of-the-art computers, software, and dedicated spaces for
+            practical training and group activities.
+          </p>
+        </div>
       </div>
     </div>
+
     <div>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.1654820891376!2d121.0705871!3d14.5896446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8050676cba3%3A0xbb119aca1cc16520!2sMFI!5e0!3m2!1sen!2sph!4v1732693013083!5m2!1sen!2sph"
@@ -268,3 +324,48 @@
     </div>
   </body>
 </html>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".zigzag-pasig-item");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Adjust this to control when the animation triggers
+      }
+    );
+
+    items.forEach((item) => observer.observe(item));
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Add a delay based on the item's index to make them appear one by one
+            setTimeout(() => {
+              entry.target.classList.add("visible");
+            }, index * 300); // Adjust the delay (e.g., 300ms) as needed
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    galleryItems.forEach((item) => {
+      observer.observe(item);
+    });
+  });
+</script>
