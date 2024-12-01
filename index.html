@@ -9,712 +9,7 @@
       href="https://www.mfi.org.ph/wp-content/uploads/2020/04/mfi-logo.png"
       type="image/x-icon"
     />
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-      }
-
-      .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #d4ebf8;
-        padding: 10px 20px;
-        color: #1f509a;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo img {
-        width: 50px;
-        height: auto;
-        margin-right: 10px;
-        padding: 0;
-        margin: 0;
-      }
-
-      .logo span {
-        font-size: 24px;
-        font-weight: bold;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 20px;
-        z-index: 999;
-      }
-
-      .nav-links li {
-        position: relative;
-        border: 1px solid #1f509a;
-        border-radius: 4px;
-      }
-
-      .nav-links a {
-        color: #1f509a;
-        text-decoration: none;
-        padding: 8px 12px;
-        display: flex;
-        align-items: center;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-      }
-
-      .nav-links a:hover {
-        background-color: #0a3981;
-        color: #d4ebf8;
-      }
-
-      .nav-links a img {
-        margin-left: 8px;
-        vertical-align: middle;
-      }
-
-      .dropdown:hover .dropdown-menu {
-        display: block;
-      }
-
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #0a3981;
-        padding: 10px;
-        list-style: none;
-        min-width: 180px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        border-radius: 4px;
-      }
-
-      .dropdown-menu li a {
-        color: #d4ebf8;
-        padding: 8px 12px;
-        display: block;
-        border-radius: 4px;
-      }
-
-      .dropdown-menu li a:hover {
-        background-color: #e38e49;
-        color: #0a3981;
-      }
-
-      .search-bar {
-        position: relative;
-        display: flex;
-        align-items: center;
-        border: 1px solid #1f509a;
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .search-bar input {
-        border: none;
-        outline: none;
-        padding: 8px 12px;
-        width: 180px;
-        font-size: 14px;
-      }
-
-      .search-bar button {
-        background-color: #1f509a;
-        border: none;
-        padding: 8px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-      }
-
-      .search-bar button img {
-        width: 20px;
-        height: 20px;
-      }
-
-      .search-bar input::placeholder {
-        color: #1f509a;
-      }
-
-      .popover {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #ffffff;
-        border: 1px solid #1f509a;
-        border-radius: 4px;
-        width: 100%;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      }
-
-      .popover ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .popover li {
-        padding: 8px 12px;
-        cursor: pointer;
-        border-bottom: 1px solid #ddd;
-        color: #1f509a;
-      }
-
-      .popover li:hover {
-        background-color: #f0f0f0;
-      }
-
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .nav-links {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .nav-links li {
-          margin-bottom: 10px;
-        }
-
-        .search-bar {
-          width: 100%;
-          margin-top: 10px;
-        }
-
-        .search-bar input {
-          width: calc(100% - 40px);
-        }
-      }
-
-      footer {
-        background-color: #333;
-        color: #ffffff;
-        padding: 20px 0;
-      }
-
-      .container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 0 20px;
-      }
-
-      .campus-info,
-      .fb-page-section {
-        flex: 1;
-        min-width: 250px;
-        background-color: #444;
-        padding: 15px;
-        border-radius: 5px; /* Rounded corners for a softer look */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
-      }
-
-      .campus-info h3,
-      .fb-page-section h3 {
-        margin-top: 0;
-        color: #e38e49; /* Highlight color for headings */
-      }
-
-      .campus-info p,
-      .campus-info ul,
-      .fb-page-section p {
-        margin: 5px 0;
-        color: #ddd; /* Light text for readability */
-      }
-
-      .fb-page {
-        width: 100%; /* Full width for responsive display */
-      }
-
-      .whatsapp-link {
-        color: #25d366;
-        font-size: 16px;
-        display: inline-block;
-        margin-top: 10px;
-      }
-
-      .whatsapp-link:hover {
-        text-decoration: underline;
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          flex-direction: column; /* Stack sections vertically on smaller screens */
-        }
-
-        .campus-info,
-        .fb-page-section {
-          min-width: 100%; /* Full width for smaller screens */
-          margin-bottom: 20px; /* Add space between stacked sections */
-        }
-      }
-
-      .sidebar {
-        position: fixed;
-        top: 50%;
-        right: 0;
-        width: 80px; /* Default for larger screens */
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transform: translateY(-50%);
-        padding: 10px 0;
-        z-index: 9999;
-      }
-
-      .icon-item {
-        position: relative;
-        text-align: center;
-        margin-bottom: 15px; /* Space between icons */
-        cursor: pointer;
-        background-color: #dddddd6b;
-      }
-
-      .icon {
-        width: 40px; /* Default icon size */
-        height: 40px; /* Default icon size */
-        border: 2px solid #000; /* White border for better contrast */
-        border-radius: 8px; /* Rounded corners for a smoother look */
-        padding: 5px;
-        box-sizing: border-box;
-        cursor: pointer;
-        transition: border-color 0.3s, transform 0.3s; /* Smooth transition */
-      }
-
-      .icon:hover {
-        border-color: #e38e49; /* Border color change on hover */
-        transform: scale(1.1); /* Slight scaling effect on hover */
-      }
-
-      .tooltip {
-        position: absolute;
-        top: -35px; /* Adjusted to fit above the icon */
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #ffffff; /* Lighter color for dark icons */
-        color: #0a3981;
-        padding: 5px 10px;
-        border-radius: 5px;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.3s;
-        font-size: 12px; /* Improved readability */
-        white-space: nowrap;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        border: 1px solid black;
-      }
-
-      .icon-item:hover .tooltip {
-        visibility: visible;
-        opacity: 1;
-      }
-
-      .icon-item:hover {
-        background-color: #e38e49;
-        border-radius: 50%;
-        padding: 8px; /* Adjusted padding */
-      }
-
-      /* Media query for smaller screens */
-      @media (max-width: 600px) {
-        .sidebar {
-          width: 60px; /* Reduce sidebar width */
-        }
-
-        .icon {
-          width: 30px; /* Smaller icon size */
-          height: 30px; /* Smaller icon size */
-        }
-
-        .tooltip {
-          font-size: 10px; /* Smaller tooltip text */
-          top: -25px; /* Adjust tooltip position */
-        }
-      }
-
-      @media (max-width: 400px) {
-        .sidebar {
-          width: 50px; /* Even smaller for very narrow screens */
-        }
-
-        .icon {
-          width: 25px; /* Smaller icon size */
-          height: 25px; /* Smaller icon size */
-        }
-
-        .tooltip {
-          font-size: 8px; /* Even smaller tooltip text */
-          top: -20px; /* Adjust tooltip position */
-        }
-      }
-
-      /* General resets */
-      body,
-      h1,
-      h2,
-      p {
-        margin: 0;
-        padding: 0;
-        font-family: "Arial", sans-serif;
-      }
-
-      .home-container {
-        text-align: center;
-        padding: 20px;
-        background-color: #ffffff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        max-width: 90%;
-        margin: 20px;
-      }
-
-      .child-home-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .image-container {
-        margin: 20px 0;
-      }
-
-      .image-container img {
-        width: 100%;
-        max-width: 600px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      main {
-        margin: 20px 0;
-      }
-
-      .cta-section h2 {
-        color: #2c3e50;
-        font-size: 2rem;
-        margin-bottom: 10px;
-      }
-
-      .cta-section p {
-        color: #7f8c8d;
-        font-size: 1rem;
-        margin-bottom: 20px;
-      }
-
-      .cta-button {
-        background-color: #3498db;
-        color: #ffffff;
-        border: none;
-        border-radius: 5px;
-        padding: 15px 30px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin: 10px 0 0 0;
-      }
-
-      .cta-button:hover {
-        background-color: #2980b9;
-      }
-
-      footer {
-        margin-top: 20px;
-        font-size: 0.9rem;
-        color: #7f8c8d;
-      }
-      main {
-        text-align: left;
-        padding: 10px;
-      }
-
-      /* Responsive design */
-      @media (max-width: 600px) {
-        header h1 {
-          font-size: 2rem;
-        }
-
-        .cta-section h2 {
-          font-size: 1.5rem;
-        }
-
-        .cta-section p {
-          font-size: 0.9rem;
-        }
-      }
-
-      /* Container for the marquee */
-      .marquee {
-        width: 100%; /* Full width */
-        overflow: hidden; /* Hide content that's scrolled out */
-        position: relative;
-        background-color: #f0f0f0; /* Optional, change background color */
-      }
-
-      /* Content that moves inside the marquee */
-      .marquee-content {
-        display: flex;
-        mix-blend-mode: multiply;
-        transition: transform 0.2s ease-out; /* Smooth transition for images */
-      }
-
-      /* Styling for the images */
-      .marquee-content img {
-        height: 50px; /* Adjust the height of the images */
-        margin-right: 20px; /* Space between the images */
-      }
-
-      .programs {
-        text-align: center;
-        padding: 20px;
-      }
-
-      .programs h2 {
-        color: #1f509a; /* Deep Blue */
-        margin-bottom: 30px;
-        font-size: 2rem;
-        text-transform: uppercase;
-      }
-
-      .card-program {
-        position: relative;
-        display: inline-block;
-        width: 250px;
-        margin: 15px;
-        padding: 15px;
-        border: 2px solid #1f509a; /* Deep Blue Border */
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #ffffff; /* White Background for Cards */
-        transition: transform 0.3s, box-shadow 0.3s;
-        overflow: hidden; /* Ensures content doesn't overflow */
-      }
-
-      .card-program img {
-        width: 100%;
-        max-width: 100px; /* Adjust as needed */
-        border-radius: 4px;
-        margin-bottom: 10px;
-      }
-
-      .card-program p {
-        font-size: 1.1rem;
-        color: #0a3981; /* Dark Blue */
-        font-weight: bold;
-        margin: 0;
-      }
-
-      .card-program:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      .card-program::after {
-        content: attr(
-          data-title
-        ); /* Fetches the value from the data-title attribute */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.7);
-        color: #ffffff;
-        padding: 10px;
-        border-radius: 6px;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s;
-        text-align: center;
-        font-size: 1rem;
-      }
-
-      .card-program:hover::after {
-        opacity: 1; /* Shows the title on hover */
-      }
-
-      .card-program:nth-child(odd) {
-        border-color: #1f509a; /* Deep Blue Border */
-      }
-
-      .card-program:nth-child(odd):hover {
-        border-color: #0a3981; /* Dark Blue Border on hover */
-      }
-
-      .anniversary-title {
-        color: #1f509a; /* Deep Blue for the main text */
-        font-size: 2.5rem; /* Larger font size */
-        font-weight: bold; /* Make it bold for emphasis */
-        text-align: center; /* Center the text */
-        background: linear-gradient(
-          90deg,
-          #0a3981,
-          #e38e49
-        ); /* Gradient background */
-        -webkit-background-clip: text; /* Clip the background to text */
-        color: transparent; /* Make the text color transparent so the gradient shows */
-        padding: 10px; /* Add some padding */
-        border-radius: 5px; /* Rounded corners */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
-        margin-bottom: 20px; /* Increased margin for spacing */
-      }
-
-      .milestone-text {
-        color: #0a3981; /* Dark Blue */
-        font-size: 1.1rem; /* Slightly larger font size for readability */
-        line-height: 1.1; /* Add space between lines */
-        font-family: "Arial", sans-serif; /* Clean and modern font */
-        text-align: justify;
-        width: 90%;
-      }
-
-      .loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.5
-        ); /* Optional: add a semi-transparent background */
-        z-index: 1000; /* Make sure the GIF overlays everything */
-        transition: opacity 1s ease-out;
-      }
-
-      .loading img {
-        width: auto;
-        max-width: 100%;
-        max-height: 100%; /* Scale the image to fit within the viewport */
-      }
-
-      .mfi-content {
-        opacity: 0; /* Initially hidden */
-        transition: opacity 1s ease-in-out; /* Smooth transition for appearance */
-        z-index: 1; /* Ensure content is layered above the background */
-        position: relative;
-      }
-
-      .body-discover {
-        font-family: "Arial", sans-serif;
-        background-color: #e4f0f8; /* Light blue background */
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-      }
-
-      .discover {
-        width: 100%;
-        max-width: 1200px;
-      }
-
-      .card-discover-container .icon {
-        width: 50px; /* Set the size of the icon */
-        height: auto;
-      }
-
-      .card-discover-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-
-      .card-discover {
-        background: linear-gradient(135deg, #d4ebf8, #1f509a, #0a3981, #e38e49);
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start; /* Align content to the left */
-        text-align: left; /* Ensure text is left-aligned */
-        height: 400px; /* Set a consistent height for all cards */
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-
-      .card-discover iframe {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px; /* Add space between iframe and content */
-      }
-
-      .card-discover img {
-        max-width: 100%;
-        border-radius: 10px;
-        margin-bottom: 10px; /* Add space between image and content */
-      }
-
-      .card-discover h2 {
-        color: #ffffff;
-        margin: 10px 0; /* Adjust spacing */
-      }
-
-      .card-discover p {
-        color: #f9f9f9;
-        margin: 0 0 10px; /* Adjust spacing */
-        line-height: 1.6; /* Improve readability */
-      }
-
-      .card-discover a {
-        color: #ffffff;
-        text-decoration: underline;
-        font-weight: bold;
-        transition: color 0.3s;
-        text-decoration: none;
-      }
-
-      .card-discover a:hover {
-        color: #ffdc60;
-      }
-
-      .card-discover:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      .prev-btn,
-      .next-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 2rem;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: #fff;
-        z-index: 1;
-      }
-
-      .prev-btn {
-        left: 10px;
-      }
-
-      .next-btn {
-        right: 10px;
-      }
-
-      .prev-btn:hover,
-      .next-btn:hover {
-        color: #ff6347;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="loading">
@@ -731,7 +26,7 @@
           <span>MFI Polytechnic Inc</span>
         </div>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li class="dropdown">
             <a href="#programs"
               >Programs
@@ -741,11 +36,31 @@
                 width="20px"
             /></a>
             <ul class="dropdown-menu">
-              <li><a href="#dual-training">Dual Training System</a></li>
-              <li><a href="#scholarship">Scholarship</a></li>
-              <li><a href="#short-course">Short Course</a></li>
-              <li><a href="#custom-training">Customized Training</a></li>
-              <li><a href="#skills-assessment">Skills Assessment</a></li>
+              <li>
+                <a href="https://www.mfi.edu.ph/index.php/dual-training-system/"
+                  >Dual Training System</a
+                >
+              </li>
+              <li>
+                <a href="https://www.mfi.edu.ph/index.php/scholarship/"
+                  >Scholarship</a
+                >
+              </li>
+              <li>
+                <a href="https://www.mfi.edu.ph/index.php/short-courses/"
+                  >Short Course</a
+                >
+              </li>
+              <li>
+                <a href="https://www.mfi.edu.ph/index.php/customized-training/"
+                  >Customized Training</a
+                >
+              </li>
+              <li>
+                <a href="https://www.mfi.edu.ph/index.php/skills-assessment/"
+                  >Skills Assessment</a
+                >
+              </li>
             </ul>
           </li>
           <li class="dropdown">
@@ -757,22 +72,54 @@
                 width="20px"
             /></a>
             <ul class="dropdown-menu">
-              <li><a href="#history">History</a></li>
-              <li><a href="#mission-vision">Mission and Vision</a></li>
-              <li><a href="#core-values">Core Values</a></li>
+              <li>
+                <a
+                  href="https://www.mfi.edu.ph/index.php/about-us/#history"
+                  target="_blank"
+                  >History</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.mfi.edu.ph/index.php/about-us/#mission_and_vision"
+                  target="_blank"
+                  >Mission and Vision</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.mfi.edu.ph/index.php/about-us/#core_values"
+                  target="_blank"
+                  >Core Values</a
+                >
+              </li>
               <li class="dropdown">
-                <a href="#campus">Campus</a>
+                <a
+                  href="https://www.mfi.edu.ph/index.php/#campus"
+                  target="_blank"
+                  >Campus</a
+                >
                 <ul class="dropdown-menu-campus">
-                  <li><a href="#pasig">Pasig</a></li>
-                  <li><a href="#pasay">Pasay</a></li>
-                  <li><a href="#jalajala">Jalajala</a></li>
+                  <li><a href="pasig.html">Pasig</a></li>
+                  <li><a href="pasay.html">Pasay</a></li>
+                  <li><a href="jalajala.html">Jalajala</a></li>
                 </ul>
               </li>
-              <li><a href="#bot-management">Bots and Management</a></li>
-              <li><a href="#logo">Logo</a></li>
+              <li>
+                <a
+                  href="https://www.mfi.edu.ph/index.php/#bots_and_management"
+                  target="_blank"
+                  >Bots and Management</a
+                >
+              </li>
+              <li>
+                <a href="https://www.mfi.edu.ph/index.php/#logo" target="_blank"
+                  >Logo</a
+                >
+              </li>
             </ul>
           </li>
-          <li><a href="#contact-us">Contact Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
           <li><a href="#job-opportunities">Job Opportunities</a></li>
         </ul>
         <div class="search-bar">
@@ -1004,7 +351,11 @@
       <section id="video"><img src="IMG.jpg" alt="" /></section>
       <!-- news and announcement -->
       <section id="news">
-        <img src="new.png" alt="" style="width: 100%" />
+        <img
+          src="new.png"
+          alt=""
+          style="width: 100%; display: block; margin: auto"
+        />
       </section>
       <!-- footer -->
       <footer id="footer">
@@ -1169,101 +520,7 @@
           content.style.opacity = "1";
         }, 1000);
       }, 8000);
-      // const headers = [
-      //   "51 Year Anniversary of MFI Polytechnic",
-      //   "Scholarship for employment",
-      //   "Enrollment is now ongoing!",
-      //   "Integrated Technology Training Program (ITTP)",
-      //   `
-      //         Hundred of courses available
-      // `,
-      // ];
-      // const imageurls = [
-      //   "51 Year.jpg",
-      //   "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/10/SCHOLARSHIP-FOR-ROLLING-SCHED.png?resize=980%2C551&ssl=1",
-      //   "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/09/resized-ENROLLMENT-IS-NOW-ONGOING.jpg?resize=980%2C551&ssl=1",
-      //   "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/08/ITTP-website-banner.png?resize=980%2C551&ssl=1",
-      //   "https://i0.wp.com/www.mfi.edu.ph/wp-content/uploads/2024/09/resized-TTAP-WEBSITE-BANNER.jpg?resize=980%2C551&ssl=1",
-      // ];
-      // const paragraphs = [
-      //   `   We extend our heartfelt gratitude to everyone who has been a
-      //                       part of our journey. Reaching this 51-year milestone is a
-      //                       testament to the dedication, hard work, and unwavering support
-      //                       of our students, faculty, alumni, and community. At MFI
-      //                       Polytechnic, we continue to strive for excellence and
-      //                       innovation, empowering future generations to lead in the
-      //                       ever-evolving world of technology and education.`,
-      //   `GT Foundation and Analog Devices are proud to offer scholarships at MFI Polytechnic Institute for the following programs:
 
-      //       Semiconductor Manufacturing Technology
-      //       Industrial Electrical Technology
-      //       Network System and Security Administration
-      //       Don’t miss this opportunity to level up your skills and secure your future!`,
-      //   `
-      // Enrollment is now ongoing!
-      // MFI Polytechnic Institute renowned for its industry-driven technical education, We are thrilled to announce the start of enrollment for our Dual Training System Program (DTS) for School Year 2024 – 2025
-
-      // Empowering You with Choice and Opportunity:
-
-      // Automotive Technology
-      // Digital Arts and Design
-      // Industrial Automation and Mechatronics Technology
-      // Information Technology
-      // Integrated Technology Training Program
-      // Network Security and System Administration
-      // Industrial Electrical Technology
-      // `,
-      //   `Our Integrated Technology training program offers a unique blend of theoretical knowledge and hands-on experience to propel you toward a successful career.
-      // `,
-      //   `Hundreds of courses available
-      // MFI has gone a long way since 1973, evolving into a fully operational educational institution that provides the general public with world-class technical skills education and training.
-      // `,
-      // ];
-      // const btnCalls = [
-      //   "Learn More",
-      //   "Apply Now",
-      //   "Enroll Now",
-      //   "Learn More",
-      //   "See all courses",
-      // ];
-
-      // // Query elements
-      // const grid = document.querySelector(".child-home-container");
-      // const img = document.querySelector(".image-container img");
-      // const h1 = document.querySelector(".anniversary-title");
-      // const p = document.querySelector(".milestone-text");
-      // const btn = document.querySelector(".cta-button");
-
-      // let count = 0;
-
-      // const updateContent = () => {
-      //   // Set initial state for the grid and elements
-      //   grid.style.opacity = 0;
-      //   img.classList.remove("show");
-      //   p.style.opacity = 0;
-      //   h1.style.opacity = 0;
-      //   btn.style.opacity = 0;
-
-      //   // Set new content
-      //   img.src = imageurls[count];
-      //   h1.textContent = headers[count];
-      //   p.textContent = paragraphs[count];
-      //   btn.textContent = btnCalls[count];
-
-      //   // Trigger reflow to restart transition
-      //   void grid.offsetWidth;
-
-      //   // Apply animations
-      //   grid.style.opacity = 1;
-      //   img.classList.add("show");
-      //   p.style.opacity = 1;
-      //   h1.style.opacity = 1;
-      //   btn.style.opacity = 1;
-
-      //   count = (count + 1) % headers.length; // Wrap around to 0 when reaching the end
-      // };
-
-      // setInterval(updateContent, 2000);
       const headers = [
         "51 Year Anniversary of MFI Polytechnic",
         "Scholarship for employment",

@@ -4,6 +4,354 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="https://www.mfi.org.ph/wp-content/uploads/2020/04/mfi-logo.png"
+          alt="MFI Polytechnic Inc Logo"
+        />
+        <span>MFI Polytechnic Inc</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#programs"
+            >Programs
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png"
+              alt="Dropdown Icon"
+              width="20px"
+          /></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="https://www.mfi.edu.ph/index.php/dual-training-system/"
+                >Dual Training System</a
+              >
+            </li>
+            <li>
+              <a href="https://www.mfi.edu.ph/index.php/scholarship/"
+                >Scholarship</a
+              >
+            </li>
+            <li>
+              <a href="https://www.mfi.edu.ph/index.php/short-courses/"
+                >Short Course</a
+              >
+            </li>
+            <li>
+              <a href="https://www.mfi.edu.ph/index.php/customized-training/"
+                >Customized Training</a
+              >
+            </li>
+            <li>
+              <a href="https://www.mfi.edu.ph/index.php/skills-assessment/"
+                >Skills Assessment</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#about-us"
+            >About Us
+            <img
+              src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png"
+              alt="Dropdown Icon"
+              width="20px"
+          /></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                href="https://www.mfi.edu.ph/index.php/about-us/#history"
+                target="_blank"
+                >History</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.mfi.edu.ph/index.php/about-us/#mission_and_vision"
+                target="_blank"
+                >Mission and Vision</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.mfi.edu.ph/index.php/about-us/#core_values"
+                target="_blank"
+                >Core Values</a
+              >
+            </li>
+            <li class="dropdown">
+              <a href="https://www.mfi.edu.ph/index.php/#campus" target="_blank"
+                >Campus</a
+              >
+              <ul class="dropdown-menu-campus">
+                <li><a href="pasig.html">Pasig</a></li>
+                <li><a href="pasay.html">Pasay</a></li>
+                <li><a href="jalajala.html">Jalajala</a></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="https://www.mfi.edu.ph/index.php/#bots_and_management"
+                target="_blank"
+                >Bots and Management</a
+              >
+            </li>
+            <li>
+              <a href="https://www.mfi.edu.ph/index.php/#logo" target="_blank"
+                >Logo</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#job-opportunities">Job Opportunities</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <button>
+          <img src="search.png" alt="Search Icon" />
+        </button>
+        <div class="popover" id="popover">
+          <ul id="popover-list"></ul>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <h1
+        style="
+          text-align: center;
+          font-size: 40px;
+          color: white;
+          padding-top: 20px;
+          background-color: navy;
+          padding-bottom: 10px;
+        "
+      >
+        Contact Us
+      </h1>
+      <p
+        style="
+          color: white;
+          text-align: center;
+          background-color: navy;
+          padding-bottom: 10px;
+        "
+      >
+        Interested to enroll in MFI’s courses and programs?
+      </p>
+    </section>
+    <section
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 10px;
+      "
+    >
+      <form action="post">
+        <h2 style="color: navy">Send us a Message</h2>
+        <div>
+          <select name="campus" id="" aria-placeholder="Select Campus">
+            <option value="select-campus">Select Campus</option>
+            <option value="pasig">Pasig</option>
+            <option value="pasay">Pasay</option>
+            <option value="jalajala">Jalajala</option>
+          </select>
+        </div>
+        <div><input type="text" placeholder="Name" /></div>
+        <div><input type="email" placeholder="Email Address" /></div>
+        <div>
+          <textarea
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Message"
+          ></textarea>
+        </div>
+        <button
+          style="
+            background-color: navy;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+          "
+        >
+          Submit
+        </button>
+      </form>
+      <div
+        style="display: flex; flex-direction: column; gap: 10px"
+        class="contact-campus"
+      >
+        <a href="pasig.html">
+          <img src="pasig.png" alt="" />
+        </a>
+        <a href="pasay.html">
+          <img src="pasay.png" alt="" />
+        </a>
+        <a href="jalajala.html">
+          <img src="jalajala.png" alt="" />
+        </a>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="container">
+        <!-- MFI Pasig Campus -->
+        <div class="campus-info">
+          <h3>MFI Pasig</h3>
+          <p>
+            <strong>Address:</strong> MFI Building, Ortigas Avenue, Pasig City
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:pasig@mfi.edu.ph" style="color: #ddd"
+              >pasig@mfi.edu.ph</a
+            >
+          </p>
+          <p><strong>Contact:</strong></p>
+          <ul>
+            <li>0999-855-9880 (Smart)</li>
+            <li>0945-398-7687 (Globe)</li>
+            <li>(02) 8632-0758 to 62</li>
+          </ul>
+          <!-- WhatsApp Link -->
+          <a
+            href="https://wa.me/639998559880"
+            class="whatsapp-link"
+            target="_blank"
+          >
+            Contact us on WhatsApp
+          </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.1654820891376!2d121.0705871!3d14.5896446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8050676cba3%3A0xbb119aca1cc16520!2sMFI!5e0!3m2!1sen!2sph!4v1732693013083!5m2!1sen!2sph"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- MFI Pasay Campus -->
+        <div class="campus-info">
+          <h3>MFI Pasay</h3>
+          <p>
+            <strong>Address:</strong> Isabel Building, 2240 Taft Avenue, Brgy.
+            058, Pasay City 1300
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:pasay@mfi.edu.ph" style="color: #ddd"
+              >pasay@mfi.edu.ph</a
+            >
+          </p>
+
+          <p><strong>Contact:</strong></p>
+          <ul>
+            <li>0929-302-2799</li>
+            <li>8-846-5142 to 43</li>
+          </ul>
+          <br />
+          <!-- WhatsApp Link -->
+          <a
+            href="https://wa.me/639293022799"
+            class="whatsapp-link"
+            target="_blank"
+          >
+            Contact us on WhatsApp
+          </a>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15447.404315855238!2d120.97967947372612!3d14.550507377322328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca26e2e0a67d%3A0x76edd245dc56df45!2sMFI%20Polytechnic%20Institute-Pasay%20Campus!5e0!3m2!1sfil!2sph!4v1732709673494!5m2!1sfil!2sph"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- MFI Jalajala Campus -->
+        <div class="campus-info">
+          <h3>MFI Jalajala</h3>
+          <p>
+            <strong>Address:</strong> MFI Building, Jica Highway, Brgy. Punta,
+            Jalajala, Rizal
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:jalajala@mfi.edu.ph" style="color: #ddd"
+              >jalajala@mfi.edu.ph</a
+            >
+          </p>
+          <p><strong>Contact:</strong></p>
+          <ul>
+            <li>0916-394-8314</li>
+            <li>0927-974-8442</li>
+            <li>(02) 8710-2901</li>
+          </ul>
+          <!-- WhatsApp Link -->
+          <a
+            href="https://wa.me/639163948314"
+            class="whatsapp-link"
+            target="_blank"
+          >
+            Contact us on WhatsApp
+          </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5792.750965139942!2d121.30219793517806!3d14.299960331924591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397e12b6056835b%3A0x554e3ed404445633!2sMFI%20Jalajala%20Campus!5e0!3m2!1sfil!2sph!4v1732709906796!5m2!1sfil!2sph"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Facebook Page -->
+        <div class="fb-page-section">
+          <h3>Follow Us on Facebook</h3>
+          <div id="fb-root"></div>
+          <script
+            async
+            defer
+            crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"
+          ></script>
+          <div
+            class="fb-page"
+            data-href="https://www.facebook.com/@MFIPolytechnic"
+            data-tabs="timeline"
+            data-width="500"
+            data-height="400"
+            data-small-header="true"
+            data-adapt-container-width="true"
+            data-hide-cover="false"
+            data-show-facepile="true"
+          >
+            <blockquote
+              cite="https://www.facebook.com/@MFIPolytechnic"
+              class="fb-xfbml-parse-ignore"
+            >
+              <a href="https://www.facebook.com/@MFIPolytechnic"
+                >MFI Polytechnic Institute Inc.</a
+              >
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
